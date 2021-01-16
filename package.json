@@ -1,24 +1,27 @@
 {
     "private": true,
     "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
+        "local:js": "NODE_ENV=development parcel build resources/js/app.js --dist-dir public/js --public-url ./ --cache-dir storage/parcel --no-source-maps",
+        "local:css": "NODE_ENV=development postcss resources/css/app.css --output public/css/app.css",
+        "local": "npm run local:js && npm run local:css",
+        "build:js": "NODE_ENV=production parcel build resources/js/app.js --dist-dir public/js --public-url ./ --cache-dir storage/parcel --no-source-maps",
+        "build:css": "NODE_ENV=production postcss resources/css/app.css --output public/css/app.css",
+        "build": "npm run build:js && npm run build:css"
     },
+    "browserslist": "> 0.2%",
     "devDependencies": {
         "@tailwindcss/forms": "^0.2.1",
         "@tailwindcss/typography": "^0.3.0",
-        "alpinejs": "^2.7.3",
         "autoprefixer": "^10.0.2",
-        "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "postcss-import": "^12.0.1",
-        "tailwindcss": "^2.0.1"
+        "cssnano": "^4.1.10",
+        "parcel": "^2.0.0-nightly.481",
+        "postcss": "^8.2.1",
+        "postcss-cli": "^8.3.1",
+        "postcss-import": "^14.0.0",
+        "standard": "^16.0.3",
+        "tailwindcss": "^2.0.2"
+    },
+    "dependencies": {
+        "alpinejs": "^2.8"
     }
 }
