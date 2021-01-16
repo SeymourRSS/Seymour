@@ -1,0 +1,57 @@
+To Do:
+- sort out database connection
+- Parcel/Alpine
+- Tailwind/PostCSS
+- Github Actions
+- Set up code formatting (psr2) // waiting for PHP 8 support
+
+Road Map:
+- Feeds: Subscribe
+- Mock feeds for testing
+- Feeds: Unsubscribe
+- Feeds: Check for new entries / Scheduled Job
+- Entry: md5 hash / mark as read / soft-delete
+- Users: Timezone / date directive / API Keys
+- UI MVP
+- OPML: Import / Export
+- Initialization
+- Feed Categories
+- API
+- keyboard navigation
+
+
+Blog Notes:
+
+- Create new laravel project
+    - vscode settings
+    - editorconfig / gitattributes
+    - code formatting
+    - .env configuration
+    - .gitignore: exclude built assets
+- Set up Dev Environment
+    - Docker/Docker Compose
+    - Hat tip to Kenichi
+- JetPack Scaffolding
+- Set up Parcel/Alpine
+- Set up Tailwind/PostCSS
+- Set up GH Actions for CI
+
+
+Links:
+https://dev.to/gayanhewa/breaking-up-with-laravel-mix-3ddc
+https://devopsheaven.com/sqlite/backup/restore/dump/databases/docker/2017/10/10/sqlite-backup-restore-docker.html
+https://www.shiphp.com/blog/2018/php-sqlite-docker
+http://www.maxburstein.com/blog/build-your-own-rss-feed-reader/
+
+Done:
+- Local dev environment with docker
+- vscode settings
+- adjust editor config
+- adjust default .env keys
+- Install JetPack/Livewire
+- Install actions package
+- publish stubs
+
+
+Notes:
+<div>Icons made by <a href="http://www.freepik.com/" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
