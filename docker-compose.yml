@@ -1,0 +1,34 @@
+version: '3'
+
+services:
+
+  sm:
+    build:
+      context: docker/seymour
+    command: php-fpm
+    expose:
+      - "9000"
+    volumes:
+      - ./:/var/www:cached
+
+  nginx:
+    build:
+      context: docker/nginx
+    # command: ['nginx-debug']
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - ./:/var/www:cached
+    depends_on:
+      - sm
+    networks:
+      default:
+        aliases:
+          - seymour.test
+
+  node:
+    build:
+      context: docker/node
+    volumes:
+      - ./:/var/www:cached
