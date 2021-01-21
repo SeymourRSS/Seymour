@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  sm:
+  seymour:
     build:
       context: docker/seymour
     command: php-fpm
@@ -16,12 +16,11 @@ services:
       context: docker/nginx
     # command: ['nginx-debug']
     ports:
-      - '80:80'
-      - '443:443'
+      - "${APP_PORT}:80"
     volumes:
       - ./:/var/www:cached
     depends_on:
-      - sm
+      - seymour
     networks:
       default:
         aliases:
