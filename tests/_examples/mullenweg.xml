@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?><rss version="2.0"
+	xmlns:content="http://purl.org/rss/1.0/modules/content/"
+	xmlns:wfw="http://wellformedweb.org/CommentAPI/"
+	xmlns:dc="http://purl.org/dc/elements/1.1/"
+	xmlns:atom="http://www.w3.org/2005/Atom"
+	xmlns:sy="http://purl.org/rss/1.0/modules/syndication/"
+	xmlns:slash="http://purl.org/rss/1.0/modules/slash/"
+
+	xmlns:georss="http://www.georss.org/georss"
+	xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+	>
+
+<channel>
+	<title>Matt Mullenweg</title>
+	<atom:link href="https://ma.tt/feed/" rel="self" type="application/rss+xml" />
+	<link>https://ma.tt</link>
+	<description>Unlucky in Cards</description>
+	<lastBuildDate>Mon, 08 Feb 2021 18:04:26 +0000</lastBuildDate>
+	<language>en-US</language>
+	<sy:updatePeriod>
+	hourly	</sy:updatePeriod>
+	<sy:updateFrequency>
+	1	</sy:updateFrequency>
+	<generator>https://wordpress.org/?v=5.6.1</generator>
+<site xmlns="com-wordpress:feed-additions:1">1047865</site>	<item>
+		<title>Parse.ly &#038; Automattic</title>
+		<link>https://ma.tt/2021/02/parse-ly-automattic/</link>
+					<comments>https://ma.tt/2021/02/parse-ly-automattic/#respond</comments>
+
+		<dc:creator><![CDATA[Matt]]></dc:creator>
+		<pubDate>Mon, 08 Feb 2021 17:58:32 +0000</pubDate>
+				<category><![CDATA[Asides]]></category>
+		<guid isPermaLink="false">https://ma.tt/?p=53692</guid>
+
+					<description><![CDATA[Excited to welcome Parse.ly to the Automattic family, in an acquisition that&#8217;s closing today. They&#8217;ll be joining our enterprise group, WPVIP. The deal has been nicely covered in the Wall Street Journal and Axios. As a bonus, here&#8217;s Parse.ly co-founder Andrew Montalenti&#8217;s first comment on this blog, in 2012. Great article, Matt. I wrote about [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Excited to <a href="https://blog.parse.ly/post/9995/wpvip-acquisition/">welcome Parse.ly</a> to the <a href="https://automattic.com/">Automattic</a> family, in an acquisition that&#8217;s closing today. They&#8217;ll be <a href="https://wpvip.com/2021/02/08/parsely-acquisition/">joining our enterprise group, WPVIP</a>. The deal has been nicely covered in <a href="https://www.wsj.com/articles/wordpress-vip-buying-content-analytics-firm-parse-ly-11612788609">the Wall Street Journal</a> and <a href="https://www.axios.com/wordpress-vip-acquiring-content-analytics-company-parsely-f4b9cc5f-55a9-49db-a8c5-dd3759b7e8e9.html">Axios</a>. As a bonus, here&#8217;s Parse.ly co-founder Andrew Montalenti&#8217;s <a href="https://ma.tt/2012/09/future-of-work/#comment-568316">first comment on this blog</a>, in 2012.</p>
+
+
+
+<blockquote class="wp-block-quote"><p>Great article, Matt. I wrote about this on my blog &#8212; Fully Distributed Teams: Are They Viable?</p><p><a href="http://www.pixelmonkey.org/2012/05/14/distributed-teams">http://www.pixelmonkey.org/2012/05/14/distributed-teams</a></p><p>In it, I drew the distinction between &#8220;horizontally scaled&#8221; teams, in which physical offices are connected to remote workers via satellite (home or commercial) offices, and &#8220;fully distributed&#8221; teams where, as you said, &#8220;the creative center and soul of the organization on the internet, and not in an office.&#8221;</p><p>At Parse.ly, we&#8217;re only a couple years old but have been operating on the distributed team model, with ~13 fully distributed employees, and it&#8217;s working well. Always glad to hear stories about how Automattic has scaled it to 10X our size.</p><p>And, likewise, we blow some of our office space savings on camaraderie-building retreats; our most recent one was in New York, see [<a href="http://www.flickr.com/photos/amontalenti/sets/72157629938809778/">here</a>] and [<a href="http://www.flickr.com/photos/amontalenti/sets/72157630060466656/">here</a>.]</p></blockquote>
+]]></content:encoded>
+
+					<wfw:commentRss>https://ma.tt/2021/02/parse-ly-automattic/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+
+
+		<post-id xmlns="com-wordpress:feed-additions:1">53692</post-id>	</item>
+		<item>
+		<title>Compounding Ice</title>
+		<link>https://ma.tt/2021/02/compounding-ice/</link>
+					<comments>https://ma.tt/2021/02/compounding-ice/#respond</comments>
+
+		<dc:creator><![CDATA[Matt]]></dc:creator>
+		<pubDate>Wed, 03 Feb 2021 01:44:42 +0000</pubDate>
+				<category><![CDATA[Asides]]></category>
+		<guid isPermaLink="false">https://ma.tt/?p=53641</guid>
+
+					<description><![CDATA[I learned something novel about how the ice age happened from this Freakishly Strong Base post by Morgan Housel: The prevailing idea before [Wladimir] Köppen was that ice ages occur when the earth’s tilt supercharges the wrath of cold winters. Köppen showed that wasn’t the case. Instead, moderately cool summers are the culprit. It begins [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>I learned something novel about how the ice age happened from this <a href="https://www.collaborativefund.com/blog/the-freakishly-strong-base/">Freakishly Strong Base post by Morgan Housel</a>:</p>
+
+
+
+<blockquote class="wp-block-quote"><p>The prevailing idea before [Wladimir] Köppen was that ice ages occur when the earth’s tilt supercharges the wrath of cold winters. Köppen showed that wasn’t the case. Instead, moderately cool summers are the culprit.</p><p>It begins when a summer never gets warm enough to melt the previous winter’s snow. The leftover ice base makes it easier for snow to accumulate the following winter, which increases the odds of snow sticking around in the following summer, which attracts even more accumulation the following winter. Perpetual snow reflects more of the sun’s rays, which exacerbates cooling, which brings more snowfall, and on and on.</p><p>You start with a thin layer of snow left over from a cool summer that no one pays much attention to, and after a few tens of thousands of years the entire earth is covered in miles-thick ice.</p></blockquote>
+
+
+
+<p>Fascinating! The blog goes on to apply the idea to that strong base, accumulating a bit at a time, to investing and business. The power of compounding seems appropriate to share on <a href="https://www.aboutamazon.com/news/company-news/email-from-jeff-bezos-to-employees">the day Jeff Bezos announced his retirement</a>.</p>
+
+
+
+<p>I&#8217;ll leave you with one of my favorite quotes from Charlie Munger, which is also how the <a href="https://www.collaborativefund.com/blog/the-freakishly-strong-base/">article ends</a>: </p>
+
+
+
+<figure class="wp-block-pullquote is-style-default"><blockquote><p>&#8216;The first rule of compounding: never interrupt it unnecessarily.&#8217;</p><cite>Charlie Munger</cite></blockquote></figure>
+
+
+
+<p><em>The iceberg photo is one <a href="https://ma.tt/2011/08/glacier/">I took near Svalbard in 2011</a>.</em></p>
+]]></content:encoded>
+
+					<wfw:commentRss>https://ma.tt/2021/02/compounding-ice/feed/</wfw:commentRss>
+			<slash:comments>0</slash:comments>
+
+
+		<post-id xmlns="com-wordpress:feed-additions:1">53641</post-id>	</item>
+		<item>
+		<title>Revue Joins Twitter</title>
+		<link>https://ma.tt/2021/01/revue-joins-twitter/</link>
+					<comments>https://ma.tt/2021/01/revue-joins-twitter/#comments</comments>
+
+		<dc:creator><![CDATA[Matt]]></dc:creator>
+		<pubDate>Tue, 26 Jan 2021 18:43:18 +0000</pubDate>
+				<category><![CDATA[Automattic]]></category>
+		<guid isPermaLink="false">https://ma.tt/2021/01/revue-joins-twitter/</guid>
+
+					<description><![CDATA[Very excited to share the news that Revue is joining Twitter. I’m a huge fan of the idea of better newsletters and Automattic was the largest investor in Revue. I’m looking forward to seeing what the very talented team will do as part of the Twitter network. Also many thanks to Kevin Kelly and Om [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>Very excited to share the <a href="https://blog.twitter.com/en_us/topics/company/2021/making-twitter-a-better-home-for-writers.html">news that Revue is joining Twitter</a>. I’m a huge fan of the idea of better newsletters and <a href="https://automattic.com">Automattic</a> was the largest investor in <a href="https://www.getrevue.co/">Revue</a>. I’m looking forward to seeing what the very talented team will do as part of the Twitter network. Also many thanks to <a href="https://kk.org">Kevin Kelly</a> and <a href="https://om.co">Om</a> for introducing me to Revue early on. </p>
+]]></content:encoded>
+
+					<wfw:commentRss>https://ma.tt/2021/01/revue-joins-twitter/feed/</wfw:commentRss>
+			<slash:comments>1</slash:comments>
+
+
+		<post-id xmlns="com-wordpress:feed-additions:1">53555</post-id>	</item>
+		<item>
+		<title>New WhiteHouse.gov</title>
+		<link>https://ma.tt/2021/01/new-whitehouse-gov/</link>
+					<comments>https://ma.tt/2021/01/new-whitehouse-gov/#comments</comments>
+
+		<dc:creator><![CDATA[Matt]]></dc:creator>
+		<pubDate>Thu, 21 Jan 2021 01:15:26 +0000</pubDate>
+				<category><![CDATA[WordPress]]></category>
+		<guid isPermaLink="false">https://ma.tt/?p=53526</guid>
+
+					<description><![CDATA[After you&#8217;ve watched the amazing poem from Amanda Gorman, check out the new WhiteHouse.gov that re-launched today using WordPress &#38; Gutenberg with a number of cool features including dark mode, text zoom, a totally responsive layout, and a Spanish version of the site. The site is clean, fast, and accessible. It&#8217;s exciting and an honor [&#8230;]]]></description>
+										<content:encoded><![CDATA[
+<p>After you&#8217;ve watched <a href="https://www.npr.org/sections/inauguration-day-live-updates/2021/01/20/958743170/poet-amanda-gorman-reads-the-hill-we-climb">the amazing poem from Amanda Gorman</a>, check out the <a href="https://www.whitehouse.gov/">new WhiteHouse.gov that re-launched today</a> using WordPress &amp; Gutenberg with a number of cool features including dark mode, text zoom, a totally responsive layout, and a Spanish version of the site. The site is clean, <a href="https://twitter.com/wesbos/status/1351957829461155849">fast</a>, and accessible. It&#8217;s exciting and an honor that the online home for the Executive branch is on Open Source software, and I&#8217;m proud WordPress can carry the torch that <a href="https://dri.es/whitehouse-gov-using-drupal">Drupal lit in 2009</a>.</p>
+
+
+
+<p>Besides Gutenberg, poking around I noticed a HTTP header and HTML comment <a href="https://usds.gov/apply">encouraging people to join USDS</a>, and this great #46 easter egg in the theme file:</p>
+
+
+
+<figure class="wp-block-image size-large"><img data-attachment-id="53527" data-permalink="https://ma.tt/2021/01/new-whitehouse-gov/screen-shot-2021-01-20-at-5-15-50-pm/" data-orig-file="https://i0.wp.com/ma.tt/files/2021/01/Screen-Shot-2021-01-20-at-5.15.50-PM.png?fit=1072%2C450&amp;ssl=1" data-orig-size="1072,450" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="Screen Shot 2021-01-20 at 5.15.50 PM" data-image-description="" data-medium-file="https://i0.wp.com/ma.tt/files/2021/01/Screen-Shot-2021-01-20-at-5.15.50-PM.png?fit=840%2C353&amp;ssl=1" data-large-file="https://i0.wp.com/ma.tt/files/2021/01/Screen-Shot-2021-01-20-at-5.15.50-PM.png?fit=580%2C244&amp;ssl=1" loading="lazy" width="580" height="244" src="https://i1.wp.com/ma.tt/files/2021/01/Screen-Shot-2021-01-20-at-5.15.50-PM-1024x430.png?resize=580%2C244&#038;ssl=1" alt="" class="wp-image-53527" srcset="https://i0.wp.com/ma.tt/files/2021/01/Screen-Shot-2021-01-20-at-5.15.50-PM.png?resize=1024%2C430&amp;ssl=1 1024w, https://i0.wp.com/ma.tt/files/2021/01/Screen-Shot-2021-01-20-at-5.15.50-PM.png?resize=840%2C353&amp;ssl=1 840w, https://i0.wp.com/ma.tt/files/2021/01/Screen-Shot-2021-01-20-at-5.15.50-PM.png?resize=195%2C82&amp;ssl=1 195w, https://i0.wp.com/ma.tt/files/2021/01/Screen-Shot-2021-01-20-at-5.15.50-PM.png?resize=768%2C322&amp;ssl=1 768w, https://i0.wp.com/ma.tt/files/2021/01/Screen-Shot-2021-01-20-at-5.15.50-PM.png?w=1072&amp;ssl=1 1072w" sizes="(max-width: 580px) 100vw, 580px" data-recalc-dims="1" /></figure>
+
+
+
+<p>Anyone notice any other plugins? I haven&#8217;t spoken to him directly but I&#8217;d be shocked if <a href="https://nacin.com/">Nacin</a> wasn&#8217;t involved with this one. I&#8217;m also curious if any of the WP agencies were involved, it has touches of <a href="https://10up.com/">10up</a> but I don&#8217;t see any mention of it on their site or <a href="https://twitter.com/10up">Twitter</a>. <a href="https://twitter.com/HoeflerCo/status/1351984719634771970">Hoefler&amp;Co  credits</a> <a href="https://wideeye.co/">Wide Eye Creative with the design</a>.</p>
+
+
+
+<p>I noticed a few people happy that some previous pages and files on the old site were returning 404 errors, like the <a href="https://www.nbcnews.com/news/nbcblk/how-trump-administration-s-1776-report-warps-history-racism-slavery-n1254926">controversial 1776 report</a>, but on this I think the webmasters of the United States of America should demand better, since <a href="https://www.w3.org/Provider/Style/URI">Cool URIs Don&#8217;t Change</a>. Previous websites are <a href="https://www.archives.gov/presidential-libraries/archived-websites">all saved by the National Archives</a>, but there doesn&#8217;t appear to be any sort of norm for automatically redirecting links that went to any subdirectories or addresses under WhiteHouse.gov. </p>
+
+
+
+<p>There are WP plugins that could help, like <a href="https://wordpress.org/plugins/redirection/">Redirection</a>, but also perhaps the root domain itself could always redirect to a subdomain, like 46.whitehouse.gov, so we&#8217;d have a consistent domain and permalinks for everything, and then each new administration would get a new subdomain.</p>
+
+
+
+<p><a href="https://wptavern.com/biden-white-house-sticks-with-wordpress-for-website-relaunch">More coverage on WP Tavern</a>.</p>
+]]></content:encoded>
+
+					<wfw:commentRss>https://ma.tt/2021/01/new-whitehouse-gov/feed/</wfw:commentRss>
+			<slash:comments>10</slash:comments>
+
+
+		<post-id xmlns="com-wordpress:feed-additions:1">53526</post-id>	</item>
+		<item>
+		<title>Iceland Film</title>
+		<link>https://ma.tt/2021/01/iceland-film/</link>
+					<comments>https://ma.tt/2021/01/iceland-film/#comments</comments>
+
+		<dc:creator><![CDATA[Matt]]></dc:creator>
+		<pubDate>Tue, 12 Jan 2021 21:46:38 +0000</pubDate>
+				<category><![CDATA[Asides]]></category>
+		<guid isPermaLink="false">https://ma.tt/?p=53458</guid>
+
+					<description><![CDATA[I wanted to share with you all a short film I made with the help of Stephen Bollinger, with videos I made a few years ago on a photography trip to Iceland with Om and Mark. I hope it provides five minutes of serenity in your day.]]></description>
+										<content:encoded><![CDATA[
+<p>I wanted to share with you all a short film I made with the help of Stephen Bollinger, with videos I made a few years ago on a photography trip to Iceland with <a href="https://om.co/">Om</a> and <a href="https://twitter.com/markkawano">Mark</a>. I hope it provides five minutes of serenity in your day.</p>
+
+
+
+<figure class="wp-block-embed alignwide is-type-video is-provider-youtube wp-block-embed-youtube wp-embed-aspect-16-9 wp-has-aspect-ratio"><div class="wp-block-embed__wrapper">
+<iframe class='youtube-player' width='580' height='327' src='https://www.youtube.com/embed/5Vj8DWc2l8g?version=3&#038;rel=1&#038;showsearch=0&#038;showinfo=1&#038;iv_load_policy=1&#038;fs=1&#038;hl=en-US&#038;autohide=2&#038;wmode=transparent' allowfullscreen='true' style='border:0;' sandbox='allow-scripts allow-same-origin allow-popups allow-presentation'></iframe>
+</div></figure>
+]]></content:encoded>
+
+					<wfw:commentRss>https://ma.tt/2021/01/iceland-film/feed/</wfw:commentRss>
+			<slash:comments>12</slash:comments>
+
+
+		<post-id xmlns="com-wordpress:feed-additions:1">53458</post-id>	</item>
+
+	</channel>
+</rss>

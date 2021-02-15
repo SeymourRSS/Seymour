@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:media="http://search.yahoo.com/mrss/" xmlns:georss="http://www.georss.org/georss" xmlns:audioboom="https://audioboom.com/rss/1.0" version="2.0" xml:base="https://audioboom.com/">
+<!--
+
+      ***************************************************************
+      * Hi! You're looking at an RSS feed. If you're not sure what  *
+      * to do here, you can visit our help center to find out more: *
+      *                https://support.audioboom.com                *
+      ***************************************************************
+
+-->
+<!-- https://audioboom.com/channel/nosuchthingasafish -->
+<channel>
+<title>No Such Thing As A Fish</title>
+<description>Award-winning podcast from the QI offices in which the writers of the hit BBC show discuss the best things they've found out this week.
+
+Hosted by Dan Schreiber (@schreiberland) with James Harkin (@jamesharkin), Andrew Hunter Murray (@andrewhunterm), and Anna Ptaszynski (#GetAnnaOnTwitter)</description>
+<link>https://audioboom.com/channel/nosuchthingasafish</link>
+<atom:link href="https://audioboom.com/channels/2399216.rss" rel="self" type="application/rss+xml" />
+<atom:link href="https://pubsubhubbub.appspot.com/" rel="hub" />
+<pubDate>Wed, 25 Nov 2020 16:11:01 +0000</pubDate>
+<language>en</language>
+<image>
+  <url>https://images.theabcdn.com/i/24025650.jpg</url>
+  <title>No Such Thing As A Fish</title>
+  <link>https://audioboom.com/channel/nosuchthingasafish</link>
+</image>
+<itunes:image href="https://images.theabcdn.com/i/24025650.jpg" />
+<audioboom:banner-image href="https://images.theabcdn.com/i/36346084.jpg" />
+<itunes:category text="Comedy" />
+<itunes:explicit>no</itunes:explicit>
+<itunes:summary>Award-winning podcast from the QI offices in which the writers of the hit BBC show discuss the best things they've found out this week.
+
+Hosted by Dan Schreiber (@schreiberland) with James Harkin (@jamesharkin), Andrew Hunter Murray (@andrewhunterm), and Anna Ptaszynski (#GetAnnaOnTwitter)</itunes:summary>
+<itunes:author>No Such Thing As A Fish</itunes:author>
+<itunes:owner>
+  <itunes:name>No Such Thing As A Fish</itunes:name>
+  <itunes:email>podcast@qi.com</itunes:email>
+</itunes:owner>
+<copyright>© 2014 Quite Interesting Ltd	</copyright>
+<itunes:new-feed-url>https://audioboom.com/channels/2399216.rss</itunes:new-feed-url>
+<itunes:type>episodic</itunes:type>
+
+<item>
+  <title>348: No Such Thing As Infinite Toilet Paper</title>
+  <link>https://audioboom.com/posts/7732700</link>
+  <itunes:episode>348</itunes:episode>
+  <itunes:title>No Such Thing As Infinite Toilet Paper</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7732700.mp3?modified=1605788035&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7732700.mp3?modified=1605788035&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3406" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37312209.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37312209.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3406</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Dan, Anna, Andrew and James discuss burglary tools, hornet tales, and infinite tiles.
+
+Visit nosuchthingasafish.com for news about live shows, merchandise and more episodes.</description>
+
+  <content:encoded>&lt;div&gt;Dan, Anna, Andrew and James discuss burglary tools, hornet tales, and infinite tiles. &lt;br&gt;&lt;br&gt;Visit &lt;a href=&quot;http://nosuchthingasafish.com&quot;&gt;nosuchthingasafish.com&lt;/a&gt; for news about live shows, merchandise and more episodes.&lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 20 Nov 2020 14:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-11-18:/posts/7732700</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+<item>
+  <title>347: No Such Thing As A Bacon Scented Sleep Mask</title>
+  <link>https://audioboom.com/posts/7728784</link>
+  <itunes:episode>347</itunes:episode>
+  <itunes:title>No Such Thing As A Bacon Scented Sleep Mask</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7728784.mp3?modified=1605205179&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7728784.mp3?modified=1605205179&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3527" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37289939.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37289939.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3527</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Dan, Anna, Andrew and James discuss prisons, escapes, chess and why you can never have too much spam.
+
+Visit nosuchthingasafish.com for news about live shows, merchandise and more episodes.</description>
+
+  <content:encoded>&lt;div&gt;Dan, Anna, Andrew and James discuss prisons, escapes, chess and why you can never have too much spam. &lt;br&gt;&lt;br&gt;Visit &lt;a href=&quot;http://nosuchthingasafish.com&quot;&gt;nosuchthingasafish.com&lt;/a&gt; for news about live shows, merchandise and more episodes.&lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 13 Nov 2020 14:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-11-12:/posts/7728784</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+<item>
+  <title>346: No Such Thing As An Unsexy Astronaut</title>
+  <link>https://audioboom.com/posts/7723103</link>
+  <itunes:episode>346</itunes:episode>
+  <itunes:title>No Such Thing As An Unsexy Astronaut</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7723103.mp3?modified=1604593061&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7723103.mp3?modified=1604593061&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3981" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37259601.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37259601.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3981</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Dan, Anna, Andrew and Major Tim Peake discuss an out of this world diet, the last species on Earth, and what Tom Collins has been saying behind all of your backs.
+
+Visit nosuchthingasafish.com for news about live shows, merchandise and more episodes.</description>
+
+  <content:encoded>&lt;div&gt;Dan, Anna, Andrew and Major Tim Peake discuss an out of this world diet, the last species on Earth, and what Tom Collins has been saying behind all of your backs. &lt;br&gt;&lt;br&gt;Visit &lt;a href=&quot;http://nosuchthingasafish.com&quot;&gt;nosuchthingasafish.com&lt;/a&gt; for news about live shows, merchandise and more episodes.&lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 06 Nov 2020 14:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-11-05:/posts/7723103</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+<item>
+  <title>345: No Such Thing As A Sideways Treadmill</title>
+  <link>https://audioboom.com/posts/7717870</link>
+  <itunes:episode>345</itunes:episode>
+  <itunes:title>No Such Thing As A Sideways Treadmill</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7717870.mp3?modified=1603997140&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7717870.mp3?modified=1603997140&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3560" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37232975.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37232975.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3560</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Dan, James, Anna and Andy discuss a swearing mongoose, gangster candy and the wickedest man in the world in this year's Hallowe'en special. </description>
+
+  <content:encoded>&lt;div&gt;Dan, James, Anna and Andy discuss a swearing mongoose, gangster candy and the wickedest man in the world in this year's Hallowe'en special. &lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 30 Oct 2020 14:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-10-29:/posts/7717870</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+<item>
+  <title>344: No Such Thing As The Icelandic Trampoline Corps</title>
+  <link>https://audioboom.com/posts/7712243</link>
+  <itunes:episode>344</itunes:episode>
+  <itunes:title>No Such Thing As The Icelandic Trampoline Corps</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7712243.mp3?modified=1603991487&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7712243.mp3?modified=1603991487&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3437" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37203288.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37203288.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3437</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Dan, James, Anna and Andy discuss American Spooks, Indian Athletes and French Donkeys.
+
+Visit nosuchthingasafish.com for news about live shows, merchandise and more episodes.</description>
+
+  <content:encoded>&lt;div&gt;Dan, James, Anna and Andy discuss American Spooks, Indian Athletes and French Donkeys. &lt;br&gt;&lt;br&gt;Visit &lt;a href=&quot;http://nosuchthingasafish.com&quot;&gt;nosuchthingasafish.com&lt;/a&gt; for news about live shows, merchandise and more episodes.&lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 23 Oct 2020 13:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-10-22:/posts/7712243</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+<item>
+  <title>343: No Such Thing As A Dolphin In An Escape Room</title>
+  <link>https://audioboom.com/posts/7706399</link>
+  <itunes:episode>343</itunes:episode>
+  <itunes:title>No Such Thing As A Dolphin In An Escape Room</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7706399.mp3?modified=1602778813&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7706399.mp3?modified=1602778813&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3149" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37172644.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37172644.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3149</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Dan, James, Anna and Andy discuss bodacious inventions, heinous nuclear errors and most triumphant costume design.
+
+Visit nosuchthingasafish.com for news about live shows, merchandise and more episodes.</description>
+
+  <content:encoded>&lt;div&gt;Dan, James, Anna and Andy discuss bodacious inventions, heinous nuclear errors and most triumphant costume design.&lt;br&gt;&lt;br&gt;Visit &lt;a href=&quot;http://nosuchthingasafish.com&quot;&gt;nosuchthingasafish.com&lt;/a&gt; for news about live shows, merchandise and more episodes.&lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 16 Oct 2020 13:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-10-15:/posts/7706399</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+<item>
+  <title>342: No Such Thing As A Presidential Fight Club</title>
+  <link>https://audioboom.com/posts/7701838</link>
+  <itunes:episode>342</itunes:episode>
+  <itunes:title>No Such Thing As A Presidential Fight Club</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7701838.mp3?modified=1602244947&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7701838.mp3?modified=1602244947&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3706" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37148621.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37148621.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3706</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Dan, James, Anna and Andrew discuss the most badass members of the Roosevelt family, the legend of Barry Towncouncil, and what on Earth a not-a-bird is.
+
+Visit nosuchthingasafish.com for news about live shows, merchandise and more episodes.</description>
+
+  <content:encoded>&lt;div&gt;Dan, James, Anna and Andrew discuss the most badass members of the Roosevelt family, the legend of Barry Towncouncil, and what on Earth a not-a-bird is. &lt;br&gt;&lt;br&gt;Visit &lt;a href=&quot;http://nosuchthingasafish.com&quot;&gt;nosuchthingasafish.com&lt;/a&gt; for news about live shows, merchandise and more episodes.&lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 09 Oct 2020 13:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-10-09:/posts/7701838</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+<item>
+  <title>341: No Such Thing As A May-I Sandwich</title>
+  <link>https://audioboom.com/posts/7695829</link>
+  <itunes:episode>341</itunes:episode>
+  <itunes:title>No Such Thing As A May-I Sandwich</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7695829.mp3?modified=1601645652&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7695829.mp3?modified=1601645652&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3972" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37117598.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37117598.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3972</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Dan, James, Anna and Rhys Darby discuss dog dramas, wacky walks, and killer Kiwis.
+
+Visit nosuchthingasafish.com for news about live shows, merchandise and more episodes.</description>
+
+  <content:encoded>&lt;div&gt;Dan, James, Anna and Rhys Darby discuss dog dramas, wacky walks, and killer Kiwis. &lt;br&gt;&lt;br&gt;Visit &lt;a href=&quot;http://nosuchthingasafish.com&quot;&gt;nosuchthingasafish.com&lt;/a&gt; for news about live shows, merchandise and more episodes.&lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 02 Oct 2020 13:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-10-01:/posts/7695829</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+<item>
+  <title>340: No Such Thing as a Didgeridoo in a Bar</title>
+  <link>https://audioboom.com/posts/7689263</link>
+  <itunes:episode>340</itunes:episode>
+  <itunes:title>No Such Thing as a Didgeridoo in a Bar</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7689263.mp3?modified=1600854131&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7689263.mp3?modified=1600854131&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3579" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37083160.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37083160.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3579</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Dan, James, Andy and Anna discuss immobile fish, inedible sandwiches and incredible traffic jams.
+
+Visit nosuchthingasafish.com for news about live shows, merchandise and more episodes.</description>
+
+  <content:encoded>&lt;div&gt;Dan, James, Andy and Anna discuss immobile fish, inedible sandwiches and incredible traffic jams.&lt;br&gt;&lt;br&gt;Visit &lt;a href=&quot;http://nosuchthingasafish.com&quot;&gt;nosuchthingasafish.com&lt;/a&gt; for news about live shows, merchandise and more episodes.&lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 25 Sep 2020 13:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-09-23:/posts/7689263</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+<item>
+  <title>339: No Such Thing as a Penguin in a Nightclub</title>
+  <link>https://audioboom.com/posts/7684049</link>
+  <itunes:episode>339</itunes:episode>
+  <itunes:title>No Such Thing as a Penguin in a Nightclub</itunes:title>
+  <enclosure url="https://audioboom.com/posts/7684049.mp3?modified=1600874199&amp;source=rss&amp;stitched=1" length="0" type="audio/mpeg" />
+  <media:content url="https://audioboom.com/posts/7684049.mp3?modified=1600874199&amp;source=rss&amp;stitched=1" type="audio/mpeg" medium="audio" duration="3732" lang="en-US" />
+  <itunes:image href="https://images.theabcdn.com/i/37030467.jpg" />
+  <media:content url="https://images.theabcdn.com/i/37030467.jpg" type="image/jpg" medium="image" />
+  <itunes:duration>3732</itunes:duration>
+  <itunes:explicit>no</itunes:explicit>
+  <itunes:episodeType>full</itunes:episodeType>
+  <description>Anna, James, Andy and Tom Scott discuss flashing lights, measuring trees and naughty penguins
+
+Visit nosuchthingasafish.com (http://nosuchthingasafish.com/) for news about live shows, merchandise and more episodes.</description>
+
+  <content:encoded>&lt;div&gt;Anna, James, Andy and Tom Scott discuss flashing lights, measuring trees and naughty penguins&lt;br&gt;&lt;br&gt;Visit &lt;a href=&quot;http://nosuchthingasafish.com/&quot;&gt;nosuchthingasafish.com&lt;/a&gt; for news about live shows, merchandise and more episodes.&lt;/div&gt;</content:encoded>
+  <pubDate>Fri, 18 Sep 2020 13:00:00 +0000</pubDate>
+  <guid isPermaLink="false">tag:audioboom.com,2020-09-16:/posts/7684049</guid>
+  <itunes:author>No Such Thing As A Fish</itunes:author>
+  <dc:creator>No Such Thing As A Fish</dc:creator>
+  <media:rights status="userCreated" />
+</item>
+
+</channel>
+</rss>
