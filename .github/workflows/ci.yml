@@ -10,10 +10,10 @@ jobs:
       image: stagerightlabs/php-test-runner:8.0
 
     steps:
-      - name: Checkout repository
+      - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Composer dependency cache
+      - name: Composer Dependency Cache
         uses: actions/cache@v2
         with:
           path: ./vendor
@@ -37,12 +37,14 @@ jobs:
         run: npm install --no-progress
 
       - name: Run NPM Asset Pipeline
-        run: npm run prod
+        run: |
+          npm run build:js
+          npm run build:css
 
       - name: Prepare Application
         run: |
           cp .env.ci .env
           php artisan key:generate
           
-      - name: Run PHP Test suite
+      - name: Run PHP Test Suite
         run: ./vendor/bin/phpunit
