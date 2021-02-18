@@ -16,7 +16,7 @@ services:
       context: docker/nginx
     # command: ['nginx-debug']
     ports:
-      - "${APP_PORT}:80"
+      - "${LOCAL_WEB_PORT}:80"
     volumes:
       - ./:/var/www:cached
     depends_on:
