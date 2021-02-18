@@ -1,0 +1,68 @@
+<?xml version="1.0"?>
+<!-- https://www.tutorialspoint.com/rss/rss1.0-tag-syntax.htm -->
+<rdf:RDF
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns="http://purl.org/rss/1.0/">
+
+   <channel rdf:about="http://www.tutorialspoint.com">
+      <title>TutorialsPoint</title>
+      <link>http://tutorialspoint.com/rss</link>
+
+      <description>
+         Online Tutorials and Reference Manuals
+      </description>
+
+      <image rdf:resource= "http://tutorialspoint.com/images/tp-logo.gif" />
+
+      <items>
+         <rdf:Seq>
+         <rdf:li resource="http://tutorialspoint.com/rss/index.htm" />
+         <rdf:li resource="http://tutorialspoint.com/php/index.htm" />
+         </rdf:Seq>
+      </items>
+
+      <textinput rdf:resource= "http://www.tutorialspoint.com/tp-contact.php" />
+
+   </channel>
+
+   <image rdf:about="http://tutorialspoint.com/images/tp-logo.gif">
+      <title>TutorialsPoint Logo</title>
+      <link>http://tutorialspoint.com</link>
+      <url>http://tutorialspoint.com/images/tp-logo.gif</url>
+   </image>
+
+   <item rdf:about="http://tutorialspoint.com/rss/index.htm">
+      <title>A simple RSS tutorial</title>
+      <link>http://tutorialspoint.com/rss/index.htm</link>
+
+      <description>
+         Learn RSS in simple and easy steps.
+      </description>
+
+   </item>
+
+   <item rdf:about="http://tutorialspoint.com/php/index.htm">
+      <title>A complete guide for PHP Programmers</title>
+      <link>http://tutorialspoint.com/php/index.htm</link>
+
+      <description>
+         A free online guide for PHP. Learn PHP in very easy steps.
+      </description>
+
+   </item>
+
+   <textinput rdf:about="http://www.tutorialspoint.com/tp-contact.php">
+      <title>Contact TutorialsPoint</title>
+
+      <description>
+         Contact TutorialsPoint for more detail
+      </description>
+
+      <name>s</name>
+
+      <link>
+         http://www.tutorialspoint.com/cgi-bin/tp-contact.cgi
+      </link>
+
+   </textinput>
+</rdf:RDF>

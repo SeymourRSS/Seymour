@@ -1,0 +1,10 @@
+<?xml version='1.0' standalone='yes'?>
+<!-- https://www.php.net/manual/en/simplexml.examples-basic.php -->
+<movies>
+ <movie>
+  <title>PHP: Behind the Parser</title>
+  <plot>
+   So, this language. It's like, a programming language. Or is it a
+   scripting language? All is revealed in this thrilling horror spoof
+   of a documentary.</story>
+</movies>
