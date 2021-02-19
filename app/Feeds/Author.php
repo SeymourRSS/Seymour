@@ -62,4 +62,18 @@ class Author
     {
         return $this->uri;
     }
+
+    /**
+     * Generate an array representation of this author.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'email' => $this->email,
+            'uri' => $this->uri,
+        ];
+    }
 }
