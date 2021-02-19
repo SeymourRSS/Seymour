@@ -40,6 +40,16 @@ abstract class Feed
     }
 
     /**
+     * Get the content checksum.
+     *
+     * @return string
+     */
+    public function getChecksum(): string
+    {
+        return $this->checksum;
+    }
+
+    /**
      * @var Collection
      */
     protected $entries;
