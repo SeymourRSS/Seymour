@@ -2,7 +2,9 @@
 
 namespace App\Feeds;
 
-class Author
+use Illuminate\Contracts\Support\Arrayable;
+
+class Author implements Arrayable
 {
     /**
      * Create a new instance of the Author class.
