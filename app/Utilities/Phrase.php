@@ -13,4 +13,8 @@ class Phrase
     const FEED_HTTP_ERROR = 'There was a problem fetching the content of this feed.';
     const ATTEMPTED_INVALID_XML = 'Attempted to parse invalid XML.';
     const UNKNOWN_FEED_VARIANT = 'Unknown feed variant.';
+
+    // Subscriptions
+    const SUBSCRIPTION_CREATED = "You have been subscribed to ':title'";
+    const SUBSCRIPTION_REMOVED = "You have been unsubscribed from ':title'";
 }
