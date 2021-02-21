@@ -46,7 +46,7 @@ class Reader {
 
         if ($response->failed()) {
             $reader->hasHttpError = $response->failed();
-            $reader->message = Phrase::FEED_HTTP_ERROR;
+            $reader->message = Phrase::translate('FEED_HTTP_ERROR');
             Log::notice("Http Client Error: GET '{$url}' returned a {$response->status()} response.");
             return $reader;
         }

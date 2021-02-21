@@ -30,7 +30,10 @@ class UnsubscribeFromFeedTest extends TestCase
         ]);
 
         $this->assertTrue($action->completed());
-        $this->assertEquals(Phrase::SUBSCRIPTION_REMOVED, $action->getMessage());
+        $expectedMessage = Phrase::translate('SUBSCRIPTION_REMOVED', [
+            'title' => $subscription->title,
+        ]);
+        $this->assertEquals($expectedMessage, $action->getMessage());
         $this->assertCount(0, $user->subscriptions);
     }
 }

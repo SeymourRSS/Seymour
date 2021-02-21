@@ -24,7 +24,9 @@ class UnsubscribeFromFeed extends Action
 
         $this->subscription->delete();
 
-        return $this->complete(Phrase::SUBSCRIPTION_REMOVED);
+        return $this->complete(Phrase::translate('SUBSCRIPTION_REMOVED', [
+            'title' => $this->subscription->title,
+        ]));
     }
 
     /**

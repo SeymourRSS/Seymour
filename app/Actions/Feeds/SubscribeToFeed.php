@@ -41,7 +41,9 @@ class SubscribeToFeed extends Action
 
         // Dispatch job for storing articles...
 
-        return $this->complete(Phrase::SUBSCRIPTION_CREATED);
+        return $this->complete(Phrase::translate('SUBSCRIPTION_CREATED', [
+            'title' => $this->subscription->title,
+        ]));
     }
 
     /**
