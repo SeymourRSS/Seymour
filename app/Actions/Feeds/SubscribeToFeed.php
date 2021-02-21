@@ -19,7 +19,7 @@ class SubscribeToFeed extends Action
     public $subscription;
 
     /**
-     * Handle the action.
+     * Subscribe a user to a feed.
      *
      * @param Action|array $input
      * @return self
@@ -104,6 +104,9 @@ class SubscribeToFeed extends Action
      */
     public function required()
     {
-        return ['user', 'url'];
+        return [
+            'user', // User
+            'url' // string
+        ];
     }
 }
