@@ -21,7 +21,7 @@ class UnknownFeedVariantException extends Exception
      */
     public function __construct($xml)
     {
-        parent::__construct(Phrase::UNKNOWN_FEED_VARIANT);
+        parent::__construct(Phrase::translate('UNKNOWN_FEED_VARIANT'));
 
         $this->invalidXml = $xml;
     }

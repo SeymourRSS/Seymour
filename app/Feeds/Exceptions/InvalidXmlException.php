@@ -29,7 +29,7 @@ class InvalidXmlException extends Exception
      */
     public function __construct($xml, array $errors = [])
     {
-        parent::__construct(Phrase::ATTEMPTED_INVALID_XML);
+        parent::__construct(Phrase::translate('ATTEMPTED_INVALID_XML'));
 
         $this->errors = $errors;
         $this->invalidXml = $xml;

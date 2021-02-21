@@ -17,4 +17,18 @@ class Phrase
     // Subscriptions
     const SUBSCRIPTION_CREATED = "You have been subscribed to ':title'";
     const SUBSCRIPTION_REMOVED = "You have been unsubscribed from ':title'";
+
+    /**
+     * Localize a language constant defined in this class. Defers to the
+     * translation helper provided by Laravel.
+     *
+     * @param string $key
+     * @param array $replace
+     * @param string|null $locale
+     * @return string
+     */
+    public static function translate($key, $replace = [], $locale = null)
+    {
+        return trans(constant('self::' . $key), $replace, $locale);
+    }
 }
