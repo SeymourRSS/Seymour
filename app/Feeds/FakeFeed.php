@@ -29,7 +29,7 @@ abstract class FakeFeed {
      */
     public function getUrl(): string
     {
-        return $this->simulator->linkToSource;
+        return $this->simulator->linkToFeed;
     }
 
     /**

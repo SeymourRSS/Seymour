@@ -21,12 +21,12 @@ class Reader {
     /**
      * @var boolean
      */
-    public $hasHttpError = true;
+    public $hasHttpError = false;
 
     /**
      * @var boolean
      */
-    public $hasInvalidFeed = true;
+    public $hasInvalidFeed = false;
 
     /**
      * @var string

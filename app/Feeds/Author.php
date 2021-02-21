@@ -2,7 +2,9 @@
 
 namespace App\Feeds;
 
-class Author
+use Illuminate\Contracts\Support\Arrayable;
+
+class Author implements Arrayable
 {
     /**
      * Create a new instance of the Author class.
@@ -61,5 +63,19 @@ class Author
     public function getUri(): string
     {
         return $this->uri;
+    }
+
+    /**
+     * Generate an array representation of this author.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'name' => $this->name,
+            'email' => $this->email,
+            'uri' => $this->uri,
+        ];
     }
 }
