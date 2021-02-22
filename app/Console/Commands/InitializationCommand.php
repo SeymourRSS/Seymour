@@ -39,9 +39,17 @@ class InitializationCommand extends Command
      */
     public function handle()
     {
-        if (! Storage::exists(storage_path('app/seymour.sqlite'))) {
+        if (! Storage::exists('seymour.sqlite')) {
             touch(storage_path('app/seymour.sqlite'));
             Artisan::call('migrate');
+        }
+
+        if (! Storage::exists('public')) {
+            Storage::makeDirectory('public');
+        }
+
+        if (!Storage::exists('logs')) {
+            Storage::makeDirectory('logs');
         }
 
         return 0;
