@@ -2,16 +2,16 @@
 
 namespace App\Models;
 
+use App\Concerns\HasExtras;
 use App\Concerns\UuidAsPrimaryKey;
 use App\Models\User;
-use App\Utilities\Arr;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Subscription extends Model
 {
-    use HasFactory, SoftDeletes, UuidAsPrimaryKey;
+    use HasExtras, HasFactory, SoftDeletes, UuidAsPrimaryKey;
 
     /**
      * The table associated with the model.
@@ -52,33 +52,5 @@ class Subscription extends Model
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    /**
-     * Retrieve a value from the subscriptions 'extra' field.
-     *
-     * @param string|null $key
-     * @param mixed $default
-     * @return mixed
-     */
-    public function getExtra($key = null, $default = null): mixed
-    {
-        if ($key) {
-            return Arr::get($this->extra, $key, $default);
-        }
-
-        return $this->extra;
-    }
-
-    /**
-     * Record a value in the subscription's 'extra' field.
-     *
-     * @param string $key
-     * @param mixed $value
-     * @return void
-     */
-    public function setExtra($key, $value): void
-    {
-        $this->extra[$key] = $value;
     }
 }
