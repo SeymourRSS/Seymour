@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Concerns\UuidAsPrimaryKey;
+use App\Models\User;
 use App\Utilities\Arr;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -42,6 +43,16 @@ class Subscription extends Model
         'extra' => 'array',
         'feed_timestamp' => 'datetime',
     ];
+
+    /**
+     * The user who owns this subscription.
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 
     /**
      * Retrieve a value from the subscriptions 'extra' field.
