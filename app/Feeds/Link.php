@@ -3,8 +3,9 @@
 namespace App\Feeds;
 
 use ArrayAccess;
+use Illuminate\Contracts\Support\Arrayable;
 
-class Link implements ArrayAccess
+class Link implements ArrayAccess, Arrayable
 {
     /**
      * @var array
@@ -21,7 +22,7 @@ class Link implements ArrayAccess
     /**
      * @var string
      */
-    protected string $href = '';
+    protected $href = '';
 
     /**
      * Get the href attribute value.
@@ -36,7 +37,7 @@ class Link implements ArrayAccess
     /**
      * @var string
      */
-    protected string $hreflang = '';
+    protected $hreflang = '';
 
     /**
      * Get the hreflang attribute value.
@@ -51,7 +52,7 @@ class Link implements ArrayAccess
     /**
      * @var int
      */
-    protected int $length = 0;
+    protected $length = 0;
 
     /**
      * Get the length attribute value.
@@ -66,7 +67,7 @@ class Link implements ArrayAccess
     /**
      * @var string
      */
-    protected string $rel = 'none';
+    protected $rel = 'none';
 
     /**
      * Get the rel attribute value.
@@ -81,7 +82,7 @@ class Link implements ArrayAccess
     /**
      * @var string
      */
-    protected string $title = '';
+    protected $title = '';
 
     /**
      * Get the title attribute value.
@@ -96,7 +97,7 @@ class Link implements ArrayAccess
     /**
      * @var string
      */
-    protected string $type = '';
+    protected $type = '';
 
     /**
      * Get the type attribute value.
@@ -114,7 +115,7 @@ class Link implements ArrayAccess
      * @param array $attributes
      * @return self
      */
-    public static function fromArray($attributes = []): static
+    public static function fromArray($attributes = []): self
     {
         $link = new static;
 
@@ -184,5 +185,22 @@ class Link implements ArrayAccess
     public function __toString(): string
     {
         return $this->href;
+    }
+
+    /**
+     * Generate an array representation of this link.
+     *
+     * @return array
+     */
+    public function toArray(): array
+    {
+        return [
+            'href' => $this->href,
+            'hreflang' => $this->hreflang,
+            'length' => $this->length,
+            'rel' => $this->rel,
+            'title' => $this->title,
+            'type' => $this->type,
+        ];
     }
 }
