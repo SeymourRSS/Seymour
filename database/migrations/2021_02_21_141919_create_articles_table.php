@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubscriptionsTable extends Migration
+class CreateArticlesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,21 +13,19 @@ class CreateSubscriptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('subscriptions', function (Blueprint $table) {
+        Schema::create('articles', function (Blueprint $table) {
             $table->uuid('uuid')->primary();
             $table->string('identifier');
             $table->string('slug');
             $table->string('title');
-            $table->string('subtitle')->nullable();
-            $table->string('checksum');
-            $table->string('link_to_feed');
             $table->string('link_to_source')->nullable();
-            $table->string('license')->nullable();
+            $table->text('content')->nullable();
+            $table->text('summary')->nullable();
             $table->string('rights')->nullable();
-            $table->timestamp('feed_timestamp');
-            $table->string('variant')->nullable();
-            $table->foreignId('user_id')->index();
+            $table->timestamp('entry_timestamp');
             $table->jsonb('extra')->nullable();
+            $table->boolean('has_been_read')->default(false);
+            $table->uuid('subscription_uuid')->index();
             $table->timestamps();
             $table->softDeletes();
         });
@@ -40,6 +38,6 @@ class CreateSubscriptionsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subscriptions');
+        Schema::dropIfExists('articles');
     }
 }
