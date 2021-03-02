@@ -13,11 +13,18 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
+      - name: Get Composer Cache Directory
+        id: composer-cache
+        run: |
+          echo "::set-output name=dir::$(composer config cache-files-dir)"
+
       - name: Composer Dependency Cache
         uses: actions/cache@v2
         with:
-          path: ./vendor
-          key: composer-${{ hashFiles('composer.lock') }}
+          path: ${{ steps.composer-cache.outputs.dir }}
+          key: ${{ runner.os}}-composer-${{ hashFiles('**/composer.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-composer-
 
       - name: Install Composer Dependencies
         run: composer install --no-scripts --no-ansi --no-progress
@@ -45,6 +52,6 @@ jobs:
         run: |
           cp .env.ci .env
           php artisan key:generate
-          
+
       - name: Run PHP Test Suite
         run: ./vendor/bin/phpunit
