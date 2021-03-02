@@ -48,7 +48,7 @@ class SubscriptionFactory extends Factory
     {
         return $this->state(function(array $attributes) {
             return [
-                'deleted_at' => now()
+                'deleted_at' => now(),
             ];
         });
     }

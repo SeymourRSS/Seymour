@@ -3,6 +3,7 @@
 namespace App\Actions\Feeds;
 
 use App\Utilities\Phrase;
+use Illuminate\Support\Facades\Log;
 use StageRightLabs\Actions\Action;
 
 class UnsubscribeFromFeed extends Action
@@ -21,9 +22,9 @@ class UnsubscribeFromFeed extends Action
     public function handle($input = [])
     {
         $this->subscription = $input['subscription'];
-
         $this->subscription->delete();
 
+        Log::info("Unsubscribed {$this->subscription->user->name} from '$this->subscription->title'");
         return $this->complete(Phrase::translate('SUBSCRIPTION_REMOVED', [
             'title' => $this->subscription->title,
         ]));

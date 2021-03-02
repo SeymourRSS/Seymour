@@ -7,6 +7,18 @@ use App\Utilities\Arr;
 trait HasExtras
 {
     /**
+     * Initialize the 'has extras' trait for an instance.
+     *
+     * @return void
+     */
+    public function initializeHasExtras()
+    {
+        if (!isset($this->casts['extra'])) {
+            $this->casts['extra'] = 'array';
+        }
+    }
+
+    /**
      * Retrieve a value from the 'extra' field.
      *
      * @param string|null $key
@@ -31,6 +43,8 @@ trait HasExtras
      */
     public function setExtra($key, $value): void
     {
-        $this->extra[$key] = $value;
+        $extra = $this->extra;
+        $extra[$key] = $value;
+        $this->extra = $extra;
     }
 }

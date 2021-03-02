@@ -7,6 +7,7 @@ use App\Models\Subscription;
 use App\Models\User;
 use App\Utilities\Phrase;
 use App\Utilities\Str;
+use Illuminate\Support\Facades\Log;
 use StageRightLabs\Actions\Action;
 
 class SubscribeToFeed extends Action
@@ -41,6 +42,7 @@ class SubscribeToFeed extends Action
 
         // Dispatch job for storing articles...
 
+        Log::info("New Subscription for {$this->subscription->user->name}: '$this->subscription->title'");
         return $this->complete(Phrase::translate('SUBSCRIPTION_CREATED', [
             'title' => $this->subscription->title,
         ]));

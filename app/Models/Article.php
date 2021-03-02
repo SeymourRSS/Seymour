@@ -4,13 +4,11 @@ namespace App\Models;
 
 use App\Concerns\HasExtras;
 use App\Concerns\UuidAsPrimaryKey;
-use App\Models\Article;
-use App\Models\User;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Subscription extends Model
+class Article extends Model
 {
     use HasExtras, HasFactory, SoftDeletes, UuidAsPrimaryKey;
 
@@ -19,7 +17,7 @@ class Subscription extends Model
      *
      * @var string
      */
-    protected $table = 'subscriptions';
+    protected $table = 'articles';
 
     /**
      * The primary key for the model.
@@ -41,26 +39,7 @@ class Subscription extends Model
      * @var array
      */
     protected $casts = [
-        'feed_timestamp' => 'datetime',
+        'entry_timestamp' => 'datetime',
+        'has_been_read' => 'boolean'
     ];
-
-    /**
-     * The user who owns this subscription.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
-     */
-    public function user()
-    {
-        return $this->belongsTo(User::class);
-    }
-
-    /**
-     * The articles that belong to this subscription.
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function articles()
-    {
-        return $this->hasMany(Article::class);
-    }
 }

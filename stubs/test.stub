@@ -17,6 +17,6 @@ class {{ class }} extends TestCase
      */
     public function test_example()
     {
-        $this->markTestSkipped();
+        $this->markTestIncomplete();
     }
 }
