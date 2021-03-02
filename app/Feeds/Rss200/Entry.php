@@ -27,6 +27,15 @@ class Entry extends ParentEntry
             $this->authors->push(new Author(Xml::decode($person)));
         }
 
+        // Categories
+        $categories = collect();
+        foreach ($this->xml->category as $category) {
+            $categories->push(Xml::decode($category));
+        }
+        if ($categories->isNotEmpty()) {
+            $this->setExtra('categories', $categories->toArray());
+        }
+
         // Links
         $this->setExtra('links', Xml::links($this->xml));
         $this->linkToSource = $this->getExtra('links')
