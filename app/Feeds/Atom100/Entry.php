@@ -20,7 +20,6 @@ class Entry extends ParentEntry
     {
         // Attributes
         $this->content = Xml::content($this->xml->content);
-        // dd($this->content, $this->xml->content->children());
         $this->summary = Xml::decode($this->xml->summary);
         $this->timestamp = Xml::timestamp($this->xml->updated);
         $this->title = Xml::decode($this->xml->title);
@@ -33,6 +32,15 @@ class Entry extends ParentEntry
                 Xml::decode($person->email),
                 Xml::decode($person->uri),
             ));
+        }
+
+        // Categories
+        $categories = collect();
+        foreach($this->xml->category as $category) {
+            $categories->push(ucwords((string)$category['term']));
+        }
+        if ($categories->filter()->isNotEmpty()) {
+            $this->setExtra('categories', $categories->filter()->toArray());
         }
 
         // Links
