@@ -103,4 +103,33 @@ class RealWorldFeedReaderTest extends TestCase
         $this->assertTrue($firstEntry->getTimestamp()->eq($entryTimestamp));
         $this->assertEquals('Joyce Carol Oates — A Writing Icon on Creative Process and Creative Living (#497)', $firstEntry->getTitle());
     }
+
+    /** @test */
+    public function it_reads_the_popova_rss_feed()
+    {
+        Reader::fake('popova.xml');
+        $result = Reader::fetch('popova.xml');
+        $feed = $result->feed;
+        $timestamp = Carbon::parse('Thu, 25 Feb 2021 04:04:27 +0000');
+
+        $this->assertEquals(Variants::RSS200, $feed->getVariant());
+        $this->assertCount(10, $feed->getEntries());
+        $this->assertEquals('Brain Pickings', $feed->getTitle());
+        $this->assertEquals('An inventory of the meaningful life.', $feed->getSubtitle());
+        $this->assertTrue($feed->getTimestamp()->eq($timestamp));
+        $this->assertEquals('1edf64a20ea6cf9286e0a2231cdfe18458aefcfc', $feed->getIdentifier());
+        $this->assertEmpty($feed->getLinkToFeed());
+        $this->assertEquals('https://www.brainpickings.org', $feed->getLinkToSource());
+
+        $firstEntry = $feed->getEntries()->first();
+        $entryTimestamp = Carbon::parse('Mon, 22 Feb 2021 16:55:44 +0000');
+        $this->assertTrue($firstEntry->getAuthors()->isEmpty());
+        $this->assertEquals('https://www.brainpickings.org/?p=72784', $firstEntry->getIdentifier());
+        $this->assertStringEqualsFile(base_path('tests/_examples/popova_entry_content.html'), $firstEntry->getContent() . "\n");
+        $this->assertEquals('https://www.brainpickings.org/2021/02/22/mandelbrot-fractals-chaos/', $firstEntry->getLinkToSource());
+        $this->assertEquals('"In the mind\'s eye, a fractal is a way of seeing infinity."', $firstEntry->getSummary());
+        $this->assertTrue($firstEntry->getTimestamp()->eq($entryTimestamp));
+        $this->assertEquals('The Pattern Inside the Pattern: Fractals, the Hidden Order Beneath Chaos, and the Story of the Refugee Who Revolutionized the Mathematics of Reality', $firstEntry->getTitle());
+        $this->assertEquals(['culture', 'science', 'Benoit Mandelbrot', 'James Gleick'], $firstEntry->getExtra('categories'));
+    }
 }
