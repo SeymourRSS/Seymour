@@ -130,6 +130,6 @@ class RealWorldFeedReaderTest extends TestCase
         $this->assertEquals('"In the mind\'s eye, a fractal is a way of seeing infinity."', $firstEntry->getSummary());
         $this->assertTrue($firstEntry->getTimestamp()->eq($entryTimestamp));
         $this->assertEquals('The Pattern Inside the Pattern: Fractals, the Hidden Order Beneath Chaos, and the Story of the Refugee Who Revolutionized the Mathematics of Reality', $firstEntry->getTitle());
-        $this->assertEquals(['culture', 'science', 'Benoit Mandelbrot', 'James Gleick'], $firstEntry->getExtra('categories'));
+        $this->assertEquals(['Culture', 'Science', 'Benoit Mandelbrot', 'James Gleick'], $firstEntry->getExtra('categories'));
     }
 }

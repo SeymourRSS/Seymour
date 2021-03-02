@@ -37,7 +37,7 @@ class Entry extends ParentEntry
         // Categories
         $categories = collect();
         foreach($this->xml->category as $category) {
-            $categories->push((string)$category['term']);
+            $categories->push(ucwords((string)$category['term']));
         }
         if ($categories->filter()->isNotEmpty()) {
             $this->setExtra('categories', $categories->filter()->toArray());
