@@ -6,6 +6,12 @@ use App\Utilities\Phrase;
 use Illuminate\Support\Facades\Log;
 use StageRightLabs\Actions\Action;
 
+/**
+ * Delete a subscription.
+ *
+ * Required:
+ *  - Subscription
+ */
 class UnsubscribeFromFeed extends Action
 {
     /**
@@ -37,6 +43,8 @@ class UnsubscribeFromFeed extends Action
      */
     public function required()
     {
-        return ['subscription'];
+        return [
+            'subscription', // Subscription
+        ];
     }
 }

@@ -10,6 +10,13 @@ use App\Utilities\Str;
 use Illuminate\Support\Facades\Log;
 use StageRightLabs\Actions\Action;
 
+/**
+ * Subscribe a user to a feed.
+ *
+ * Required:
+ *  - User
+ *  - Url
+ */
 class SubscribeToFeed extends Action
 {
     /**
@@ -20,7 +27,7 @@ class SubscribeToFeed extends Action
     public $subscription;
 
     /**
-     * Subscribe a user to a feed.
+     * Handle the action.
      *
      * @param Action|array $input
      * @return self
