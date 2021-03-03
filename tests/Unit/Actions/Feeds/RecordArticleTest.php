@@ -13,7 +13,7 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Carbon;
 use Tests\TestCase;
 
-class CreateArticleTest extends TestCase
+class RecordArticleTest extends TestCase
 {
     use RefreshDatabase;
 
