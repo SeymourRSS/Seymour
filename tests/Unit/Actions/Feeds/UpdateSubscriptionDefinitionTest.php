@@ -34,7 +34,7 @@ class UpdateSubscriptionDefinitionTest extends TestCase
             'rights' => 'copyright',
             'subtitle' => 'This is Atom 1.0',
             'title' => 'New Feed Title',
-            'updated' => $knownDate,
+            'timestamp' => $knownDate,
         ])->as(Variants::ATOM100);
         Reader::fake($fake);
         $fetch = Reader::fetch('example.com/feed');

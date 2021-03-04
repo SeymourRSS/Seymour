@@ -62,7 +62,7 @@ class SimulatedFeedReaderTest extends TestCase
                 'subtitle' => 'This is RSS 0.90',
                 'identifier' => '0123456789',
                 'linkToSource' => 'example.com',
-                'updated' => $knownDate,
+                'timestamp' => $knownDate,
             ])
             ->withEntry([
                 'linkToSource' => 'example.com/link',
@@ -104,7 +104,7 @@ class SimulatedFeedReaderTest extends TestCase
                 'rights' => 'copyright',
                 'subtitle' => 'This is RSS 0.91',
                 'title' => 'Example Feed',
-                'updated' => $knownDate,
+                'timestamp' => $knownDate,
             ])
             ->withEntry([
                 'linkToSource' => 'example.com/link',
@@ -151,7 +151,7 @@ class SimulatedFeedReaderTest extends TestCase
             'rights' => 'copyright',
             'subtitle' => 'This is RSS 1.0',
             'title' => 'Example Feed',
-            'updated' => $knownDate,
+            'timestamp' => $knownDate,
         ])
             ->withEntry([
                 'linkToSource' => 'example.com/link',
@@ -198,7 +198,7 @@ class SimulatedFeedReaderTest extends TestCase
             'rights' => 'copyright',
             'subtitle' => 'This is RSS 2.0',
             'title' => 'Example Feed',
-            'updated' => $knownDate,
+            'timestamp' => $knownDate,
         ])
             ->withEntry([
                 'identifier' => 'guid1',
@@ -260,7 +260,7 @@ class SimulatedFeedReaderTest extends TestCase
             'rights' => 'copyright',
             'subtitle' => 'This is Atom 1.0',
             'title' => 'Example Feed',
-            'updated' => $knownDate,
+            'timestamp' => $knownDate,
         ])
             ->withEntry([
                 'authors' => [$author],

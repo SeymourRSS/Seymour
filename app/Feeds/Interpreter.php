@@ -57,8 +57,6 @@ class Interpreter
         $attributes = $xml->attributes();
         $namespaces = $xml->getDocNamespaces();
 
-        // dd($root, $attributes, $namespaces);
-
         // Check for RSS 0.90
         if ($root == 'RDF' && Str::contains(Arr::get($namespaces, ''), 'rdf/simple/0.9')) {
             return Variants::RSS090;

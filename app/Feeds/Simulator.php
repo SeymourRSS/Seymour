@@ -111,7 +111,7 @@ class Simulator
         $entry['linkToSource'] = Arr::get($attributes, 'linkToSource', $this->faker->url());
         $entry['summary'] = Arr::get($attributes, 'summary', $this->faker->sentence());
         $entry['title'] = Arr::get($attributes, 'title', $this->faker->sentence());
-        $entry['timestamp'] = Arr::get($attributes, 'timestamp', now());
+        $entry['timestamp'] = Arr::get($attributes, 'timestamp', now()->subWeek(1));
 
         $this->entries[] = $entry;
 
