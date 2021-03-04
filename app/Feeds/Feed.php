@@ -206,7 +206,21 @@ abstract class Feed
      */
     public function getTimestamp()
     {
-        return $this->timestamp;
+        return $this->timestamp
+            ? $this->timestamp->clone()
+            : null;
+    }
+
+    /**
+     * Get the feed timestamp as a string.
+     *
+     * @return string
+     */
+    public function getRawTimestamp()
+    {
+        return $this->timestamp
+            ? $this->timestamp->toIso8601String()
+            : '';
     }
 
     /**

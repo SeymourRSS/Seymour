@@ -28,9 +28,16 @@ class RecordArticle extends Action
      */
     public function handle($input = [])
     {
+        // Convert the entry timestamp to UTC if present.
+        $timestamp = $input['entry']->getTimestamp();
+        if ($timestamp) {
+            $timestamp->timezone('UTC')->format('Y-m-d H:i:s');
+        }
+
+        // Create a new article.
         $this->article = Article::create([
             'content' => $input['entry']->getContent(),
-            'entry_timestamp' => $input['entry']->getTimestamp(),
+            'entry_timestamp' => $timestamp,
             'identifier' => $input['entry']->getIdentifier(),
             'link_to_source' => $input['entry']->getLinkToSource(),
             'rights' => $input['entry']->getRights(),

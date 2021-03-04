@@ -160,7 +160,21 @@ abstract class Entry
      */
     public function getTimestamp()
     {
-        return $this->timestamp;
+        return $this->timestamp
+            ? $this->timestamp->clone()
+            : null;
+    }
+
+    /**
+     * Get the entry's timestamp as a string.
+     *
+     * @return string
+     */
+    public function getRawTimestamp()
+    {
+        return $this->timestamp
+            ? $this->timestamp->toIso8601String()
+            : '';
     }
 
     /**

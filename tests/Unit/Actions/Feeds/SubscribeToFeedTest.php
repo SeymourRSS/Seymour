@@ -24,7 +24,6 @@ class SubscribeToFeedTest extends TestCase
     {
         $knownDate = Carbon::create(2020, 1, 1, 12);
         $author = new Author('Grace Hopper', 'grace@example.com', 'example.com');
-        Carbon::setTestNow($knownDate);
         $fake = Simulator::make([
             'authors' => [$author],
             'identifier' => '0123456789',
@@ -33,7 +32,7 @@ class SubscribeToFeedTest extends TestCase
             'rights' => 'copyright',
             'subtitle' => 'This is Atom 1.0',
             'title' => 'Example Feed',
-            'updated' => $knownDate,
+            'timestamp' => $knownDate,
         ])->as(Variants::ATOM100);
         Reader::fake($fake);
         $user = User::factory()->create();
@@ -108,5 +107,24 @@ class SubscribeToFeedTest extends TestCase
         $this->assertCount(1, $user->subscriptions()->get());
         $this->assertCount(1, $user->subscriptions()->withTrashed()->get());
         $this->assertCount(0, $user->subscriptions()->onlyTrashed()->get());
+    }
+
+    /** @test */
+    public function it_records_timestamps_as_utc()
+    {
+        $knownDate = Carbon::create(2020, 1, 1, 12, 0, 0, 'America/Los_Angeles');
+        $fake = Simulator::make([
+            'timestamp' => $knownDate,
+        ])->as(Variants::ATOM100);
+        Reader::fake($fake);
+        $user = User::factory()->create();
+
+        $action = SubscribeToFeed::execute([
+            'url' => $fake->getUrl(),
+            'user' => $user,
+        ]);
+
+        $this->assertTrue($action->completed());
+        $this->assertTrue($action->subscription->feed_timestamp->eq($knownDate->clone()->timezone('UTC')));
     }
 }

@@ -136,7 +136,7 @@ class Xml
                 return Carbon::parse($value);
             }
         } catch (\Throwable $th) {
-            throw $th;
+            // we will ignore any parsing problems and return null instead.
         }
 
         return null;

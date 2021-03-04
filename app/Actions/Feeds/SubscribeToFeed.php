@@ -90,6 +90,11 @@ class SubscribeToFeed extends Action
             return $this->fail($fetch->message);
         }
 
+        $timestamp = $fetch->feed->getTimestamp();
+        if ($timestamp) {
+            $timestamp->timezone('UTC');
+        }
+
         $this->subscription = $user->subscriptions()->create([
             'identifier' => $fetch->feed->getIdentifier(),
             'slug' => Str::slug($fetch->feed->getTitle()),
@@ -100,7 +105,7 @@ class SubscribeToFeed extends Action
             'link_to_source' => $fetch->feed->getLinkToSource(),
             'license' => $fetch->feed->getLicense(),
             'rights' => $fetch->feed->getRights(),
-            'feed_timestamp' => $fetch->feed->getTimestamp(),
+            'feed_timestamp' => $timestamp,
             'variant' => $fetch->feed->getVariant(),
             'extra' => [
                 'authors' => $fetch->feed->getAuthors()->toArray()
