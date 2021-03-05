@@ -89,7 +89,9 @@ class SubscribeToFeedTest extends TestCase
     /** @test */
     public function a_user_can_resubscribe_to_a_previously_subscribed_feed()
     {
-        Http::fake(['example.com/rss' => Http::response([], 200)]);
+        $fake = Simulator::make(['linkToFeed' => 'example.com/feed'])
+            ->as(Variants::ATOM100);
+        Reader::fake($fake);
         $user = User::factory()->create();
         Subscription::factory()->unsubscribed()->create([
             'link_to_feed' => 'example.com/feed',

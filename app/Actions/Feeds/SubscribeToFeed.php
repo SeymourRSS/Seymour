@@ -2,6 +2,7 @@
 
 namespace App\Actions\Feeds;
 
+use App\Feeds\Feed;
 use App\Feeds\Reader;
 use App\Models\Subscription;
 use App\Models\User;
@@ -20,6 +21,13 @@ use StageRightLabs\Actions\Action;
 class SubscribeToFeed extends Action
 {
     /**
+     * The feed associated with the subscription.
+     *
+     * @var Feed|null
+     */
+    public $feed;
+
+    /**
      * The newly created subscription.
      *
      * @var Subscription
@@ -34,6 +42,13 @@ class SubscribeToFeed extends Action
      */
     public function handle($input = [])
     {
+        // Fetch the feed's XML content
+        $fetch = Reader::fetch($input['url']);
+        if ($fetch->hasFailed()) {
+            return $this->fail($fetch->message);
+        }
+        $this->feed = $fetch->feed;
+
         // Check for previously unsubscribed feeds...
         $this->restorePreviousSubscription($input['url'], $input['user']);
 
@@ -47,7 +62,13 @@ class SubscribeToFeed extends Action
             return $this;
         }
 
-        // Dispatch job for storing articles...
+        // Record articles for our new subscription
+        $action = UpdateSubscriptionContent::execute([
+            'subscription' => $this->subscription,
+        ]);
+        if ($action->completed()) {
+            $this->subscription = $action->subscription;
+        }
 
         Log::info("New Subscription for {$this->subscription->user->name}: '$this->subscription->title'");
         return $this->complete(Phrase::translate('SUBSCRIPTION_CREATED', [
@@ -70,8 +91,21 @@ class SubscribeToFeed extends Action
             ->where('link_to_feed', $url)
             ->first();
 
-        if ($this->subscription) {
-            $this->subscription->restore();
+        if (! $this->subscription) {
+            return;
+        }
+
+        // Restore the subscription
+        $this->subscription->restore();
+
+        // Update the subscription definition with the most recent version of the feed
+        $action = UpdateSubscriptionDefinition::execute([
+            'subscription' => $this->subscription,
+            'feed' => $this->feed,
+        ]);
+
+        if ($action->completed()) {
+            $this->subscription = $action->subscription;
         }
     }
 
@@ -84,31 +118,27 @@ class SubscribeToFeed extends Action
      */
     public function createNewSubscription($url, $user)
     {
-        $fetch = Reader::fetch($url);
-
-        if ($fetch->hasFailed()) {
-            return $this->fail($fetch->message);
-        }
-
-        $timestamp = $fetch->feed->getTimestamp();
+        // Convert the feed timestamp to UTC
+        $timestamp = $this->feed->getTimestamp();
         if ($timestamp) {
             $timestamp->timezone('UTC');
         }
 
+        // Create a new subscription
         $this->subscription = $user->subscriptions()->create([
-            'identifier' => $fetch->feed->getIdentifier(),
-            'slug' => Str::slug($fetch->feed->getTitle()),
-            'title' => $fetch->feed->getTitle(),
-            'subtitle' => $fetch->feed->getSubtitle(),
-            'checksum' => $fetch->feed->getChecksum(),
-            'link_to_feed' => $fetch->feed->getLinkToFeed(),
-            'link_to_source' => $fetch->feed->getLinkToSource(),
-            'license' => $fetch->feed->getLicense(),
-            'rights' => $fetch->feed->getRights(),
+            'identifier' => $this->feed->getIdentifier(),
+            'slug' => Str::slug($this->feed->getTitle()),
+            'title' => $this->feed->getTitle(),
+            'subtitle' => $this->feed->getSubtitle(),
+            'checksum' => $this->feed->getChecksum(),
+            'link_to_feed' => $this->feed->getLinkToFeed(),
+            'link_to_source' => $this->feed->getLinkToSource(),
+            'license' => $this->feed->getLicense(),
+            'rights' => $this->feed->getRights(),
             'feed_timestamp' => $timestamp,
-            'variant' => $fetch->feed->getVariant(),
+            'variant' => $this->feed->getVariant(),
             'extra' => [
-                'authors' => $fetch->feed->getAuthors()->toArray()
+                'authors' => $this->feed->getAuthors()->toArray()
             ]
         ]);
     }

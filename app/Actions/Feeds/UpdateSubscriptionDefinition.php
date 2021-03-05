@@ -37,6 +37,12 @@ class UpdateSubscriptionDefinition extends Action
         $this->feed = $input['feed'];
         $this->subscription = $input['subscription'];
 
+        // Convert the feed timestamp to UTC
+        $timestamp = $this->feed->getTimestamp();
+        if ($timestamp) {
+            $timestamp->timezone('UTC');
+        }
+
         // Update the subscription model.
         $this->subscription->update([
             'identifier' => $this->feed->getIdentifier(),
@@ -48,7 +54,7 @@ class UpdateSubscriptionDefinition extends Action
             'link_to_source' => $this->feed->getLinkToSource(),
             'license' => $this->feed->getLicense(),
             'rights' => $this->feed->getRights(),
-            'feed_timestamp' => $this->feed->getTimestamp(),
+            'feed_timestamp' => $timestamp,
             'variant' => $this->feed->getVariant(),
         ]);
 
