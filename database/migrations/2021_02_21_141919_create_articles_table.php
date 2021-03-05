@@ -25,7 +25,8 @@ class CreateArticlesTable extends Migration
             $table->timestamp('entry_timestamp');
             $table->jsonb('extra')->nullable();
             $table->boolean('has_been_read')->default(false);
-            $table->uuid('subscription_uuid')->index();
+            $table->uuid('subscription_uuid');
+            $table->foreign('subscription_uuid')->references('uuid')->on('subscriptions');
             $table->timestamps();
             $table->softDeletes();
         });
