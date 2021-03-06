@@ -17,3 +17,4 @@ todo.txt
 .vscode
 public/css/app.css
 public/js/app.js
+.php_cs.cache
