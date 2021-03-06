@@ -193,6 +193,7 @@ class SimulatedFeedReaderTest extends TestCase
         Carbon::setTestNow($knownDate);
         $author = new Author('Grace Hopper', 'grace@example.com', 'example.com');
         $fake = Simulator::make([
+            'categories' => ['cat1', 'cat2'],
             'identifier' => '0123456789',
             'linkToSource' => 'example.com',
             'rights' => 'copyright',
@@ -201,6 +202,7 @@ class SimulatedFeedReaderTest extends TestCase
             'timestamp' => $knownDate,
         ])
             ->withEntry([
+                'categories' => ['cat3', 'cat4'],
                 'identifier' => 'guid1',
                 'linkToSource' => 'example.com/link',
                 'title' => 'Example Entry Title',
@@ -227,20 +229,22 @@ class SimulatedFeedReaderTest extends TestCase
         $this->assertEquals('This is RSS 2.0', $feed->getSubtitle());
         $this->assertTrue($knownDate->equalTo($feed->getTimestamp()));
         $this->assertEquals('Example Feed', $feed->getTitle());
+        $this->assertEquals(['Cat1', 'Cat2'], $feed->getExtra('categories'));
         $entries = $feed->getEntries();
         $this->assertCount(2, $entries);
+        $this->assertEmpty($entries[0]->getAuthors());
         $this->assertEmpty($entries[0]->getContent());
         $this->assertEquals('guid1', $entries[0]->getIdentifier());
         $this->assertEquals('example.com/link', $entries[0]->getLinkToSource());
         $this->assertEquals('Summary 1', $entries[0]->getSummary());
         $this->assertEquals('Example Entry Title', $entries[0]->getTitle());
-        $this->assertEmpty($entries[0]->getAuthors());
+        $this->assertEquals(['Cat3', 'Cat4'], $entries[0]->getExtra('categories'));
         $this->assertEmpty($entries[1]->getContent());
+        $this->assertInstanceOf(Author::class, $entries[1]->getAuthors()->first());
         $this->assertEquals('guid2', $entries[1]->getIdentifier());
         $this->assertEquals('example.com/link/2', $entries[1]->getLinkToSource());
         $this->assertEquals('Summary 2', $entries[1]->getSummary());
         $this->assertEquals('Example Entry Title 2', $entries[1]->getTitle());
-        $this->assertInstanceOf(Author::class, $entries[1]->getAuthors()->first());
         $this->assertEquals('grace@example.com', $entries[1]->getAuthors()->first()->getName());
     }
 
@@ -254,6 +258,7 @@ class SimulatedFeedReaderTest extends TestCase
         Carbon::setTestNow($knownDate);
         $fake = Simulator::make([
             'authors' => [$author],
+            'categories' => ['cat1', 'cat2'],
             'identifier' => '0123456789',
             'linkToSource' => 'example.com',
             'linkToFeed' => 'example.com/feed',
@@ -264,6 +269,7 @@ class SimulatedFeedReaderTest extends TestCase
         ])
             ->withEntry([
                 'authors' => [$author],
+                'categories' => ['cat3', 'cat4'],
                 'content' => 'Content 1',
                 'identifier' => 'guid1',
                 'linkToSource' => 'example.com/link',
@@ -286,6 +292,7 @@ class SimulatedFeedReaderTest extends TestCase
 
         $feed = $result->feed;
         $this->assertNotEmpty($feed->getIdentifier());
+        $this->assertEquals(['Cat1', 'Cat2'], $feed->getExtra('categories'));
         $this->assertEquals('example.com', $feed->getLinkToSource());
         $this->assertEquals('This is Atom 1.0', $feed->getSubtitle());
         $this->assertTrue($knownDate->equalTo($feed->getTimestamp()));
@@ -298,6 +305,8 @@ class SimulatedFeedReaderTest extends TestCase
 
         $entries = $feed->getEntries();
         $this->assertCount(2, $entries);
+
+        $this->assertEquals(['Cat3', 'Cat4'], $entries[0]->getExtra('categories'));
         $this->assertEquals('guid1', $entries[0]->getIdentifier());
         $this->assertEquals('example.com/link', $entries[0]->getLinkToSource());
         $this->assertEquals('Summary 1', $entries[0]->getSummary());

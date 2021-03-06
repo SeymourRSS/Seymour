@@ -5,6 +5,7 @@ namespace App\Feeds\Atom100;
 use App\Feeds\Author;
 use App\Feeds\Entry as ParentEntry;
 use App\Feeds\Variants;
+use App\Utilities\Arr;
 use App\Utilities\Xml;
 use Illuminate\Support\Carbon;
 use SimpleXMLElement;
@@ -37,7 +38,9 @@ class Entry extends ParentEntry
         // Categories
         $categories = collect();
         foreach($this->xml->category as $category) {
-            $categories->push(ucwords((string)$category['term']));
+            $attributes = Xml::attributes($category);
+            $label = Arr::get($attributes, 'label') ?? Arr::get($attributes, 'term');
+            $categories->push(ucwords($label));
         }
         if ($categories->filter()->isNotEmpty()) {
             $this->setExtra('categories', $categories->filter()->toArray());

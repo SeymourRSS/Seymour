@@ -39,9 +39,14 @@ class Fake extends FakeFeed
             <updated>{$this->simulator->timestamp->toAtomString()}</updated>
         FEED;
 
+        // Categories
+        foreach($this->simulator->categories as $category) {
+            $feed .= "<category term=\"{$category}\" />\n";
+        }
+
         // Authors
         foreach ($this->simulator->authors as $author) {
-            $feed .= "\n<author>";
+            $feed .= "<author>";
             if ($name = $author->getName()) {
                 $feed .= "<name>{$name}</name>";
             }
@@ -51,7 +56,7 @@ class Fake extends FakeFeed
             if ($uri = $author->getUri()) {
                 $feed .= "<uri>{$uri}</uri>";
             }
-            $feed .= "</author>";
+            $feed .= "</author>\n";
         }
 
         // Entries
@@ -59,12 +64,7 @@ class Fake extends FakeFeed
             $feed .= $this->entryToString($entry);
         }
 
-        $feed .= <<<FEED
-
-        </feed>
-        FEED;
-
-        return $feed;
+        return $feed .= "</feed>";
     }
 
     /**
@@ -75,6 +75,7 @@ class Fake extends FakeFeed
      */
     protected function entryToString(array $entry): string {
         $authors = Arr::get($entry, 'authors', []);
+        $categories = Arr::get($entry, 'categories', []);
         $content = Arr::get($entry, 'content');
         $identifier = Arr::get($entry, 'identifier');
         $linkToSource = Arr::get($entry, 'linkToSource');
@@ -96,9 +97,14 @@ class Fake extends FakeFeed
             </content>
         ENTRY;
 
+        // Categories
+        foreach($categories as $category) {
+            $entry .= "<category term=\"{$category}\" />\n";
+        }
+
         // Authors
         foreach ($authors as $author) {
-            $entry .= "\n<author>";
+            $entry .= "<author>";
             if ($name = $author->getName()) {
                 $entry .= "<name>{$name}</name>";
             }
@@ -108,9 +114,9 @@ class Fake extends FakeFeed
             if ($uri = $author->getUri()) {
                 $entry .= "<uri>{$uri}</uri>";
             }
-            $entry .= "</author>";
+            $entry .= "</author>\n";
         }
 
-        return $entry .= '</entry>';
+        return $entry .= "</entry>\n";
     }
 }

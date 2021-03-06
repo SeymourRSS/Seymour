@@ -20,6 +20,15 @@ class Feed extends ParentFeed
         $this->subtitle = Xml::decode($this->xml->channel[0]->description);
         $this->title = Xml::decode($this->xml->channel[0]->title);
 
+        // Categories
+        $categories = collect();
+        foreach ($this->xml->channel[0]->category as $category) {
+            $categories->push(ucwords(Xml::decode($category)));
+        }
+        if ($categories->isNotEmpty()) {
+            $this->setExtra('categories', $categories->toArray());
+        }
+
         // Links
         $this->linkToSource = Xml::links($this->xml->channel[0])
             ->whereIn('rel', ['none', 'alternate'])

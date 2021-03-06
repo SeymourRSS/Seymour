@@ -2,6 +2,7 @@
 
 namespace App\Feeds;
 
+use App\Utilities\Arr;
 use App\Utilities\Xml;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
@@ -62,6 +63,39 @@ abstract class Feed
     public function getEntries(): Collection
     {
         return empty($this->entries) ? collect() : $this->entries;
+    }
+
+    /**
+     * @var array
+     */
+    protected $extra = [];
+
+    /**
+     * Retrieve extra information that may have been parsed from the XML.
+     *
+     * @param string|null $key
+     * @param mixed $default
+     * @return mixed
+     */
+    public function getExtra($key = null, $default = null): mixed
+    {
+        if ($key) {
+            return Arr::get($this->extra, $key, $default);
+        }
+
+        return $this->extra;
+    }
+
+    /**
+     * Record an 'extra' value that was parsed from the XML.
+     *
+     * @param string $key
+     * @param mixed $value
+     * @return void
+     */
+    public function setExtra($key, $value): void
+    {
+        $this->extra[$key] = $value;
     }
 
     /**
