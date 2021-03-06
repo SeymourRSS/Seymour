@@ -20,6 +20,11 @@ class Simulator
     /**
      * @var array
      */
+    public $categories = [];
+
+    /**
+     * @var array
+     */
     public $entries = [];
 
     /**
@@ -84,6 +89,7 @@ class Simulator
         $feed = new Simulator;
 
         $feed->authors = Arr::get($attributes, 'authors', []);
+        $feed->categories = Arr::get($attributes, 'categories', []);
         $feed->identifier = Arr::get($attributes, 'identifier', $feed->faker->uuid());
         $feed->linkToSource = Arr::get($attributes, 'linkToSource', $feed->faker->url);
         $feed->linkToFeed = Arr::get($attributes, 'linkToFeed', $feed->faker->url);
@@ -106,6 +112,7 @@ class Simulator
         $entry = [];
 
         $entry['authors'] = Arr::get($attributes, 'authors', []);
+        $entry['categories'] = Arr::get($attributes, 'categories', []);
         $entry['content'] = Arr::get($attributes, 'content', $this->faker->randomHtml());
         $entry['identifier'] = Arr::Get($attributes, 'identifier', $this->faker->uuid());
         $entry['linkToSource'] = Arr::get($attributes, 'linkToSource', $this->faker->url());

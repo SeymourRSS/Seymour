@@ -12,6 +12,40 @@ use SimpleXMLElement;
 class Xml
 {
     /**
+     * Retrieve the value of an attribute on a SimpleXMLElement
+     *
+     * @param SimpleXMLElement $xml
+     * @param string $key
+     * @param string|null $ns
+     * @return mixed|null
+     */
+    public static function attributes($xml, $key = '', $ns = null)
+    {
+        // Attempt to cast the @attributes value to an array
+        $object = $xml->attributes($ns, true);
+        $arr = (array)$object;
+
+        $attributes = [];
+        if (array_key_exists('@attributes', $arr)) {
+            // If there is an '@attributes' key available we are good to go
+            $attributes = $arr['@attributes'];
+        } else {
+            // Otherwise fetch the attributes directly from this xml element
+            foreach (iterator_to_array($object) as $key => $value) {
+                $attributes[$key] = self::decode($value);
+            }
+        }
+
+        // If have been given a key attempt to return that attribute value
+        if (!empty($key)) {
+            return Arr::get($attributes, $key, null);
+        }
+
+        // Otherwise return the entire attributes array.
+        return $attributes;
+    }
+
+    /**
      * If a SimpleXMLElement is empty we can assume that it either didn't exist
      * in the first place or that there is nothing of interest to us anyway.
      *
@@ -101,10 +135,8 @@ class Xml
         $links = collect();
 
         foreach ($xml->{$key} as $element) {
-            $attributes = [];
-            foreach (iterator_to_array($element->attributes()) as $key => $value) {
-                $attributes[$key] = self::decode($value);
-            }
+            // Retrieve the attributes from this element.
+            $attributes = self::attributes($element);
 
             // If the attributes array is empty the link may be an XML value.
             if (! Arr::has($attributes, 'href') && $href = self::decode($xml->{$key})) {

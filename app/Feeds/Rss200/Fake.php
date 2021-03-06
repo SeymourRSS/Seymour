@@ -37,6 +37,10 @@ class Fake extends FakeFeed
             <copyright>{$this->simulator->rights}</copyright>
         FEED;
 
+        foreach ($this->simulator->categories as $category) {
+            $feed .= "<category>{$category}</category>\n";
+        }
+
         foreach ($this->simulator->entries as $entry) {
             $feed .= $this->entryToString($entry);
         }
@@ -59,6 +63,7 @@ class Fake extends FakeFeed
     protected function entryToString(array $entry): string
     {
         $authors = Arr::get($entry, 'authors', []);
+        $categories = Arr::get($entry, 'categories', []);
         $identifier = Arr::get($entry, 'identifier');
         $linkToSource = Arr::get($entry, 'linkToSource');
         $summary = Arr::get($entry, 'summary');
@@ -74,8 +79,12 @@ class Fake extends FakeFeed
             <guid>{$identifier}</guid>
         ENTRY;
 
+        foreach($categories as $category) {
+            $entry .= "<category>{$category}</category>";
+        }
+
         foreach ($authors as $author) {
-            $entry .= "<author>{$author->getEmail()}</author>";
+            $entry .= "<author>{$author->getEmail()}</author>\n";
         }
 
         return $entry .= '</item>';
