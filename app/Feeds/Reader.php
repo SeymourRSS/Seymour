@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Storage;
 
-class Reader {
-
+class Reader
+{
     /**
      * @var Feed
      */
@@ -41,7 +41,7 @@ class Reader {
      */
     public static function fetch($url)
     {
-        $reader = new static;
+        $reader = new static();
         $response = Http::get($url);
 
         if ($response->failed()) {
@@ -93,7 +93,6 @@ class Reader {
                 '*' => Http::response('', 500),
             ]);
         } elseif (is_string($feed)) {
-
             $content = file_exists(base_path("tests/_examples/{$feed}"))
                 ? file_get_contents(base_path("tests/_examples/{$feed}"))
                 : $content;

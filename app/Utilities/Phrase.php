@@ -10,13 +10,13 @@ namespace App\Utilities;
 class Phrase
 {
     // Feeds
-    const FEED_HTTP_ERROR = 'There was a problem fetching the content of this feed.';
-    const ATTEMPTED_INVALID_XML = 'Attempted to parse invalid XML.';
-    const UNKNOWN_FEED_VARIANT = 'Unknown feed variant.';
+    public const FEED_HTTP_ERROR = 'There was a problem fetching the content of this feed.';
+    public const ATTEMPTED_INVALID_XML = 'Attempted to parse invalid XML.';
+    public const UNKNOWN_FEED_VARIANT = 'Unknown feed variant.';
 
     // Subscriptions
-    const SUBSCRIPTION_CREATED = "You have been subscribed to ':title'";
-    const SUBSCRIPTION_REMOVED = "You have been unsubscribed from ':title'";
+    public const SUBSCRIPTION_CREATED = "You have been subscribed to ':title'";
+    public const SUBSCRIPTION_REMOVED = "You have been unsubscribed from ':title'";
 
     /**
      * Localize a language constant defined in this class. Defers to the

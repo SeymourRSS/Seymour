@@ -25,7 +25,6 @@ class Fake extends FakeFeed
      */
     public function __toString(): string
     {
-
         $feed = <<<FEED
         <?xml version="1.0" encoding="ISO-8859-1" ?>
         <rss version="0.91">

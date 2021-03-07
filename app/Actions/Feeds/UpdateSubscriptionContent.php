@@ -72,7 +72,7 @@ class UpdateSubscriptionContent extends Action
             ->pluck('identifier');
 
         // Loop through the entries and create new articles when appropriate
-        $this->results = $entries->map(function($entry) use ($knownIdentifiers) {
+        $this->results = $entries->map(function ($entry) use ($knownIdentifiers) {
 
             // Has this entry been recorded already?
             if ($knownIdentifiers->contains($entry->getIdentifier())) {
@@ -84,7 +84,6 @@ class UpdateSubscriptionContent extends Action
                 'entry' => $entry,
                 'subscription' => $this->subscription,
             ]);
-
         })->filter();
 
         // Update the subscriptions articles relationship

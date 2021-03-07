@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-
 use Database\Seeders\ArticleSeeder;
 use Database\Seeders\SubscriptionSeeder;
 use Database\Seeders\UserSeeder;

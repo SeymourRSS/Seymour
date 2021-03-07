@@ -46,7 +46,7 @@ class SubscriptionFactory extends Factory
      */
     public function unsubscribed()
     {
-        return $this->state(function(array $attributes) {
+        return $this->state(function (array $attributes) {
             return [
                 'deleted_at' => now(),
             ];

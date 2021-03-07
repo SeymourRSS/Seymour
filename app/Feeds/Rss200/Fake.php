@@ -79,7 +79,7 @@ class Fake extends FakeFeed
             <guid>{$identifier}</guid>
         ENTRY;
 
-        foreach($categories as $category) {
+        foreach ($categories as $category) {
             $entry .= "<category>{$category}</category>";
         }
 

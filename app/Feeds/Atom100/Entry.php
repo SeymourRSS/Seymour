@@ -37,7 +37,7 @@ class Entry extends ParentEntry
 
         // Categories
         $categories = collect();
-        foreach($this->xml->category as $category) {
+        foreach ($this->xml->category as $category) {
             $attributes = Xml::attributes($category);
             $label = Arr::get($attributes, 'label') ?? Arr::get($attributes, 'term');
             $categories->push(ucwords($label));

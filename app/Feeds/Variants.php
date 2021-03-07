@@ -8,11 +8,11 @@ use Exception;
 
 class Variants
 {
-    const RSS090 = 'RSS 0.90';
-    const RSS091 = 'RSS 0.91';
-    const RSS100 = 'RSS 1.00';
-    const RSS200 = 'RSS 2.00';
-    const ATOM100 = 'ATOM 1.00';
+    public const RSS090 = 'RSS 0.90';
+    public const RSS091 = 'RSS 0.91';
+    public const RSS100 = 'RSS 1.00';
+    public const RSS200 = 'RSS 2.00';
+    public const ATOM100 = 'ATOM 1.00';
 
     /**
      * Create a new feed class from a variant name.
@@ -24,23 +24,23 @@ class Variants
     {
         switch ($variant) {
             case self::RSS090:
-                return new \App\Feeds\Rss090\Feed;
+                return new \App\Feeds\Rss090\Feed();
                 break;
 
             case self::RSS091:
-                return new \App\Feeds\Rss091\Feed;
+                return new \App\Feeds\Rss091\Feed();
                 break;
 
             case self::RSS100:
-                return new \App\Feeds\Rss100\Feed;
+                return new \App\Feeds\Rss100\Feed();
                 break;
 
             case self::RSS200:
-                return new \App\Feeds\Rss200\Feed;
+                return new \App\Feeds\Rss200\Feed();
                 break;
 
             case self::ATOM100:
-                return new \App\Feeds\Atom100\Feed;
+                return new \App\Feeds\Atom100\Feed();
                 break;
 
             default:

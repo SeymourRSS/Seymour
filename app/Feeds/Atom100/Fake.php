@@ -25,7 +25,6 @@ class Fake extends FakeFeed
      */
     public function __toString(): string
     {
-
         $feed = <<<FEED
         <?xml version="1.0" encoding="utf-8"?>
         <feed xmlns="http://www.w3.org/2005/Atom">
@@ -40,7 +39,7 @@ class Fake extends FakeFeed
         FEED;
 
         // Categories
-        foreach($this->simulator->categories as $category) {
+        foreach ($this->simulator->categories as $category) {
             $feed .= "<category term=\"{$category}\" />\n";
         }
 
@@ -73,7 +72,8 @@ class Fake extends FakeFeed
      * @param array $entry
      * @return string
      */
-    protected function entryToString(array $entry): string {
+    protected function entryToString(array $entry): string
+    {
         $authors = Arr::get($entry, 'authors', []);
         $categories = Arr::get($entry, 'categories', []);
         $content = Arr::get($entry, 'content');
@@ -98,7 +98,7 @@ class Fake extends FakeFeed
         ENTRY;
 
         // Categories
-        foreach($categories as $category) {
+        foreach ($categories as $category) {
             $entry .= "<category term=\"{$category}\" />\n";
         }
 

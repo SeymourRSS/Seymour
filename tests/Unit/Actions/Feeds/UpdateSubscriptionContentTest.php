@@ -37,7 +37,7 @@ class UpdateSubscriptionContentTest extends TestCase
 
         $this->assertTrue($action->completed());
         $this->assertCount(2, $action->subscription->articles);
-        $subscription->articles->each(function($article, $index) {
+        $subscription->articles->each(function ($article, $index) {
             $this->assertEquals('guid' . $index+1, $article->identifier);
         });
     }
