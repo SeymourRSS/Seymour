@@ -38,7 +38,7 @@ class Feed extends ParentFeed
         $this->entries = collect();
         $namespaces = $this->getXmlNamespaces();
         foreach ($this->xml->channel[0]->item as $item) {
-            $entry = new Entry;
+            $entry = new Entry();
             $entry->initialize($item, $namespaces);
             $this->entries->push($entry);
         }

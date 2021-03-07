@@ -71,7 +71,7 @@ class Entry extends ParentEntry
     {
         $itunes = [];
 
-        foreach($this->xml->children($key, true) as $key => $value) {
+        foreach ($this->xml->children($key, true) as $key => $value) {
             if (Xml::exists($value)) {
                 $itunes[$key] = Xml::decode($value);
             }

@@ -1168,7 +1168,6 @@ class ErrorHandler
 
 class HttpClient
 {
-
     private $options = array('http' => array());
     private $disableTls = false;
 

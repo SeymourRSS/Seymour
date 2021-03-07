@@ -10,7 +10,7 @@ class Link implements ArrayAccess, Arrayable
     /**
      * @var array
      */
-    const ATTRIBUTES = [
+    public const ATTRIBUTES = [
         'href',
         'hreflang',
         'length',
@@ -117,7 +117,7 @@ class Link implements ArrayAccess, Arrayable
      */
     public static function fromArray($attributes = []): self
     {
-        $link = new static;
+        $link = new static();
 
         foreach (self::ATTRIBUTES as $key) {
             $link->$key = array_key_exists($key, $attributes)

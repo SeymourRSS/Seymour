@@ -96,7 +96,7 @@ class Xml
             return '';
         }
 
-        return str_replace(array('<html>','</html>', "\n", "\t") , '' , $html);
+        return str_replace(array('<html>','</html>', "\n", "\t"), '', $html);
     }
 
     /**

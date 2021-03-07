@@ -12,7 +12,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Subscription extends Model
 {
-    use HasExtras, HasFactory, SoftDeletes, UuidAsPrimaryKey;
+    use HasExtras;
+    use HasFactory;
+    use SoftDeletes;
+    use UuidAsPrimaryKey;
 
     /**
      * The table associated with the model.

@@ -86,7 +86,7 @@ class Simulator
      */
     public static function make($attributes = []): Simulator
     {
-        $feed = new Simulator;
+        $feed = new Simulator();
 
         $feed->authors = Arr::get($attributes, 'authors', []);
         $feed->categories = Arr::get($attributes, 'categories', []);

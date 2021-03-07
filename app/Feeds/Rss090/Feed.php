@@ -29,15 +29,13 @@ class Feed extends ParentFeed
         $this->entries = collect();
         $namespaces = $this->getXmlNamespaces();
         foreach ($this->xml->item as $item) {
-            $entry = new Entry;
+            $entry = new Entry();
             $entry->initialize($item, $namespaces);
             $this->entries->push($entry);
         }
 
         // Identifier
         $this->identifier = $this->generateIdentifier();
-
-
     }
 
     /**
@@ -45,7 +43,8 @@ class Feed extends ParentFeed
      *
      * @return string
      */
-    public function getVariant(): string {
+    public function getVariant(): string
+    {
         return Variants::RSS090;
     }
 }

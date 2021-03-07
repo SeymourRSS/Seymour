@@ -14,6 +14,6 @@ if (app()->environment('local')) {
     });
 }
 
-Route::get('/', function() {
+Route::get('/', function () {
     return 'Hello world';
 });

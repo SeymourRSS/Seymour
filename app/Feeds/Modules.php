@@ -10,7 +10,7 @@ class Modules
     /**
      * The list of namespaces that we currently know how to parse.
      */
-    const LIST = [
+    public const LIST = [
         'http://www.itunes.com/dtds/podcast-1.0.dtd' => 'ItunesV1',
         'http://purl.org/rss/1.0/modules/content/' => 'ContentV1'
     ];
@@ -25,10 +25,10 @@ class Modules
     public static function available(array $namespaces)
     {
         return collect($namespaces)
-            ->filter(function($uri, $key) {
+            ->filter(function ($uri, $key) {
                 return Arr::has(self::LIST, $uri);
             })
-            ->map(function($uri) {
+            ->map(function ($uri) {
                 return Arr::get(self::LIST, $uri);
             }, collect());
     }

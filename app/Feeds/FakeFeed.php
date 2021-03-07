@@ -4,8 +4,8 @@ namespace App\Feeds;
 
 use App\Feeds\Simulator;
 
-abstract class FakeFeed {
-
+abstract class FakeFeed
+{
     /**
      * @var Simulator
      */
