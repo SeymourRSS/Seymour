@@ -4,9 +4,9 @@ This document outlines a bird's eye view of the code structure in this repositor
 
 The Seymour RSS client is built on the [TALL Stack](https://tallstack.dev/):
 
-- [Tailwind CSS](https://tailwindcss.com/) A CSS framework that emphasizes the use of 'utility' classes for design composition rather than using traditional cascading inheritance.
-- [Alpine.js](https://github.com/alpinejs/alpine) A lightweight javascript tool that is ideal for UI work. It uses a declarative syntax and offers a robust API; it does not require a build tool.
-- [Laravel](https://laravel.com/) A 'batteries included' framework for building PHP applications. It is one of the best ways to work efficiently with PHP and get things done.
+- [Tailwind CSS](https://tailwindcss.com/) A CSS framework emphasizing design composition with utility classes rather than traditional cascading inheritance.
+- [Alpine.js](https://github.com/alpinejs/alpine) A lightweight javascript framework with a declarative syntax and a robust API; ideal for UI work.
+- [Laravel](https://laravel.com/) A 'batteries included' framework for building PHP applications. An excellent way to work efficiently with PHP and get things done.
 - [Livewire](https://laravel-livewire.com/) A tool for creating rich interactive application components without writing custom javascript. Similar to Phoenix LiveView.
 
 As a Laravel/PHP application; this project follows most of the conventions defined as 'best practices' by the Laravel community.
@@ -33,11 +33,11 @@ When the system checks for new content it loops through a user's subscriptions, 
 
 For the most part a `Subscription` and a `Feed` have very similar attributes, but only the `Subscription` is stored in the database. Same goes for an `Entry` and an `Article`; only the `Article` is stored in the database.  Any "extra" content that is retrieved from a feed or an entry that does not have a dedicated table column will be stored as JSON content in a column called `extra`.
 
-# User Management
+## User Management
 
 This project uses [Jetstream](https://jetstream.laravel.com/) as a scaffolding for user management and authentication.
 
-# Actions
+## Actions
 
 Actions are a convenient way to bundle domain specific code into re-usable classes and isolate them from the parts of an application that have nothing to do with domain logic. This project uses the [stagerightlabs/actions](https://github.com/stagerightlabs/actions/) package to unify all action classes with a common API. The only action classes that do not make use of this interface are the ones that come from Jetstream.
 
