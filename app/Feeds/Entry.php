@@ -55,7 +55,7 @@ abstract class Entry
     public function getExtra($key = null, $default = null): mixed
     {
         if ($key) {
-            return Arr::get($this->extra, $key, $default);
+            return data_get($this->extra, $key, $default);
         }
 
         return $this->extra;
@@ -70,7 +70,7 @@ abstract class Entry
      */
     public function setExtra($key, $value): void
     {
-        $this->extra[$key] = $value;
+        $this->extra = data_set($this->extra, $key, $value);
     }
 
     /**

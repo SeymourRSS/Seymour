@@ -61,6 +61,7 @@ class SimulatedFeedReaderTest extends TestCase
                 'title' => 'Example Feed',
                 'subtitle' => 'This is RSS 0.90',
                 'identifier' => '0123456789',
+                'imageUrl' => 'https://picsum.photos/200/300',
                 'linkToSource' => 'example.com',
                 'timestamp' => $knownDate,
             ])
@@ -83,6 +84,9 @@ class SimulatedFeedReaderTest extends TestCase
         $this->assertNotEmpty($feed->getIdentifier());
         $this->assertEquals('example.com', $feed->getLinkToSource());
         $this->assertNull($feed->getTimestamp());
+        $this->assertEquals('example.com', $feed->getExtra('image.link'));
+        $this->assertEquals('https://picsum.photos/200/300', $feed->getExtra('image.url'));
+
         $entries = $feed->getEntries();
         $this->assertCount(2, $entries);
         $this->assertNotEmpty($entries[0]->getIdentifier());
@@ -100,6 +104,7 @@ class SimulatedFeedReaderTest extends TestCase
         Carbon::setTestNow($knownDate);
         $fake = Simulator::make([
                 'identifier' => '0123456789',
+                'imageUrl' => 'https://picsum.photos/200/300',
                 'linkToSource' => 'example.com',
                 'rights' => 'copyright',
                 'subtitle' => 'This is RSS 0.91',
@@ -128,6 +133,9 @@ class SimulatedFeedReaderTest extends TestCase
         $this->assertEquals('This is RSS 0.91', $feed->getSubtitle());
         $this->assertTrue($knownDate->equalTo($feed->getTimestamp()));
         $this->assertEquals('Example Feed', $feed->getTitle());
+        $this->assertEquals('example.com', $feed->getExtra('image.link'));
+        $this->assertEquals('https://picsum.photos/200/300', $feed->getExtra('image.url'));
+
         $entries = $feed->getEntries();
         $this->assertCount(2, $entries);
         $this->assertNotEmpty($entries[0]->getIdentifier());
@@ -195,6 +203,7 @@ class SimulatedFeedReaderTest extends TestCase
         $fake = Simulator::make([
             'categories' => ['cat1', 'cat2'],
             'identifier' => '0123456789',
+            'imageUrl' => 'https://picsum.photos/200/300',
             'linkToSource' => 'example.com',
             'rights' => 'copyright',
             'subtitle' => 'This is RSS 2.0',
@@ -230,6 +239,8 @@ class SimulatedFeedReaderTest extends TestCase
         $this->assertTrue($knownDate->equalTo($feed->getTimestamp()));
         $this->assertEquals('Example Feed', $feed->getTitle());
         $this->assertEquals(['Cat1', 'Cat2'], $feed->getExtra('categories'));
+        $this->assertEquals('example.com', $feed->getExtra('image.link'));
+        $this->assertEquals('https://picsum.photos/200/300', $feed->getExtra('image.url'));
         $entries = $feed->getEntries();
         $this->assertCount(2, $entries);
         $this->assertEmpty($entries[0]->getAuthors());
@@ -260,6 +271,7 @@ class SimulatedFeedReaderTest extends TestCase
             'authors' => [$author],
             'categories' => ['cat1', 'cat2'],
             'identifier' => '0123456789',
+            'imageUrl' => 'https://picsum.photos/200/300',
             'linkToSource' => 'example.com',
             'linkToFeed' => 'example.com/feed',
             'rights' => 'copyright',
@@ -293,6 +305,7 @@ class SimulatedFeedReaderTest extends TestCase
         $feed = $result->feed;
         $this->assertNotEmpty($feed->getIdentifier());
         $this->assertEquals(['Cat1', 'Cat2'], $feed->getExtra('categories'));
+        $this->assertEquals('https://picsum.photos/200/300', $feed->getExtra('image.url'));
         $this->assertEquals('example.com', $feed->getLinkToSource());
         $this->assertEquals('This is Atom 1.0', $feed->getSubtitle());
         $this->assertTrue($knownDate->equalTo($feed->getTimestamp()));

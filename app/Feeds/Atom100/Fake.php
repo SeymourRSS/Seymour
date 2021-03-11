@@ -38,11 +38,6 @@ class Fake extends FakeFeed
             <updated>{$this->simulator->timestamp->toAtomString()}</updated>
         FEED;
 
-        // Categories
-        foreach ($this->simulator->categories as $category) {
-            $feed .= "<category term=\"{$category}\" />\n";
-        }
-
         // Authors
         foreach ($this->simulator->authors as $author) {
             $feed .= "<author>";
@@ -56,6 +51,16 @@ class Fake extends FakeFeed
                 $feed .= "<uri>{$uri}</uri>";
             }
             $feed .= "</author>\n";
+        }
+
+        // Categories
+        foreach ($this->simulator->categories as $category) {
+            $feed .= "<category term=\"{$category}\" />\n";
+        }
+
+        // Image
+        if ($this->simulator->imageUrl) {
+            $feed .= "<logo>{$this->simulator->imageUrl}</logo>\n";
         }
 
         // Entries
