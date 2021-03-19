@@ -29,6 +29,7 @@ class UpdateSubscriptionDefinitionTest extends TestCase
         $fake = Simulator::make([
             'authors' => [$author],
             'identifier' => '0123456789',
+            'imageUrl' => 'https://picsum.photos/200/300',
             'linkToSource' => 'example.com',
             'linkToFeed' => 'example.com/feed',
             'rights' => 'copyright',
@@ -53,6 +54,7 @@ class UpdateSubscriptionDefinitionTest extends TestCase
         $this->assertEquals('This is Atom 1.0', $action->subscription->subtitle);
         $this->assertEquals('New Feed Title', $action->subscription->title);
         $this->assertEquals($author->toArray(), $action->subscription->getExtra('authors')[0]);
+        $this->assertEquals('https://picsum.photos/200/300', $action->subscription->getExtra('image.url'));
         $this->assertNotEmpty($action->subscription->checksum);
         $this->assertTrue($action->subscription->feed_timestamp->eq($knownDate));
     }

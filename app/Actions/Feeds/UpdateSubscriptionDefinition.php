@@ -58,8 +58,15 @@ class UpdateSubscriptionDefinition extends Action
             'variant' => $this->feed->getVariant(),
         ]);
 
-        // Extras
-        $this->subscription->setExtra('authors', $this->feed->getAuthors()->toArray());
+        // Authors
+        if ($this->feed->getAuthors()->isNotEmpty()) {
+            $this->subscription->setExtra('authors', $this->feed->getAuthors()->toArray());
+        }
+
+        // Image
+        if ($this->feed->hasExtra('image')) {
+            $this->subscription->setExtra('image', $this->feed->getExtra('image'));
+        }
 
         return $this->complete();
     }
