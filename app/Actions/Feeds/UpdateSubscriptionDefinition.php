@@ -63,6 +63,11 @@ class UpdateSubscriptionDefinition extends Action
             $this->subscription->setExtra('authors', $this->feed->getAuthors()->toArray());
         }
 
+        // Categories
+        if ($this->feed->hasExtra('categories')) {
+            $this->subscription->setExtra('categories', $this->feed->getExtra('categories'));
+        }
+
         // Image
         if ($this->feed->hasExtra('image')) {
             $this->subscription->setExtra('image', $this->feed->getExtra('image'));

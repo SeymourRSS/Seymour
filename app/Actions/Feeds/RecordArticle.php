@@ -47,10 +47,17 @@ class RecordArticle extends Action
             'title' => $input['entry']->getTitle(),
         ]);
 
+        // Authors
         if ($input['entry']->getAuthors()->isNotEmpty()) {
             $this->article->setExtra('authors', $input['entry']->getAuthors()->toArray());
         }
 
+        // Categories
+        if ($input['entry']->hasExtra('categories')) {
+            $this->article->setExtra('categories', $input['entry']->getExtra('categories'));
+        }
+
+        // Links
         if ($links = $input['entry']->getExtra('links')) {
             $this->article->setExtra('links', $links->toArray());
         }

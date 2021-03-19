@@ -28,6 +28,7 @@ class UpdateSubscriptionDefinitionTest extends TestCase
         ]);
         $fake = Simulator::make([
             'authors' => [$author],
+            'categories' => ['cat3', 'cat4'],
             'identifier' => '0123456789',
             'imageUrl' => 'https://picsum.photos/200/300',
             'linkToSource' => 'example.com',
@@ -47,6 +48,7 @@ class UpdateSubscriptionDefinitionTest extends TestCase
 
         $this->assertTrue($action->completed());
         $this->assertEquals('0123456789', $action->subscription->identifier);
+        $this->assertEquals(['Cat3', 'Cat4'], $action->subscription->getExtra('categories'));
         $this->assertNotEquals('original_checksum', $subscription->checksum);
         $this->assertEquals('example.com', $action->subscription->link_to_source);
         $this->assertEquals('example.com/feed', $action->subscription->link_to_feed);
