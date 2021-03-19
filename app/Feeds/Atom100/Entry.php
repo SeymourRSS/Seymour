@@ -7,8 +7,6 @@ use App\Feeds\Entry as ParentEntry;
 use App\Feeds\Variants;
 use App\Utilities\Arr;
 use App\Utilities\Xml;
-use Illuminate\Support\Carbon;
-use SimpleXMLElement;
 
 class Entry extends ParentEntry
 {

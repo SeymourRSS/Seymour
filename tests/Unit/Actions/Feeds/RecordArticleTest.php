@@ -18,7 +18,7 @@ class RecordArticleTest extends TestCase
     use RefreshDatabase;
 
     /** @test */
-    public function it_creates_articles()
+    public function it_records_articles()
     {
         $user = User::factory()->create();
         $subscription = Subscription::factory()->create([
@@ -30,6 +30,7 @@ class RecordArticleTest extends TestCase
         Carbon::setTestNow($knownDate);
         $fake = Simulator::make()->withEntry([
             'authors' => [$author],
+            'categories' => ['cat3', 'cat4'],
             'content' => 'Content 1',
             'identifier' => 'guid1',
             'linkToSource' => 'example.com/link',
@@ -47,6 +48,7 @@ class RecordArticleTest extends TestCase
 
         $this->assertTrue($action->completed());
         $this->assertEquals([$author->toArray()], $action->article->getExtra('authors'));
+        $this->assertEquals(['Cat3', 'Cat4'], $action->article->getExtra('categories'));
         $this->assertEquals('<p>        Content 1    </p>', $action->article->content);
         $this->assertEquals('guid1', $action->article->identifier);
         $this->assertEquals('example.com/link', $action->article->link_to_source);
