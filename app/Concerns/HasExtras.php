@@ -2,8 +2,6 @@
 
 namespace App\Concerns;
 
-use App\Utilities\Arr;
-
 trait HasExtras
 {
     /**
@@ -28,7 +26,7 @@ trait HasExtras
     public function getExtra($key = null, $default = null): mixed
     {
         if ($key) {
-            return Arr::get($this->extra, $key, $default);
+            return data_get($this->extra, $key, $default);
         }
 
         return $this->extra;
