@@ -2,14 +2,16 @@
 
 namespace App\Feeds;
 
+use App\Feeds\HasExtrasArray;
 use App\Feeds\Modules;
-use App\Utilities\Arr;
 use App\Utilities\Xml;
 use Illuminate\Support\Collection;
 use SimpleXMLElement;
 
 abstract class Entry
 {
+    use HasExtrasArray;
+
     /**
      * @var Collection
      */
@@ -38,39 +40,6 @@ abstract class Entry
     public function getContent(): string
     {
         return $this->content;
-    }
-
-    /**
-     * @var array
-     */
-    protected $extra = [];
-
-    /**
-     * Retrieve extra information that may have been parsed from the XML.
-     *
-     * @param string|null $key
-     * @param mixed $default
-     * @return mixed
-     */
-    public function getExtra($key = null, $default = null): mixed
-    {
-        if ($key) {
-            return data_get($this->extra, $key, $default);
-        }
-
-        return $this->extra;
-    }
-
-    /**
-     * Record an 'extra' value that was parsed from the XML.
-     *
-     * @param string $key
-     * @param mixed $value
-     * @return void
-     */
-    public function setExtra($key, $value): void
-    {
-        $this->extra = data_set($this->extra, $key, $value);
     }
 
     /**
