@@ -87,6 +87,17 @@ abstract class Feed
     }
 
     /**
+     * Check to see if a key is available in the extras array.
+     *
+     * @param string $key
+     * @return boolean
+     */
+    public function hasExtra($key)
+    {
+        return Arr::has($this->extra, $key);
+    }
+
+    /**
      * Record an 'extra' value that was parsed from the XML.
      *
      * @param string $key
