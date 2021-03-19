@@ -36,9 +36,22 @@ class Fake extends FakeFeed
                 <link>{$this->simulator->linkToSource}</link>
                 <description>{$this->simulator->subtitle}</description>
             </channel>
-
         FEED;
 
+        // Image
+        if ($url = $this->simulator->imageUrl) {
+            $feed .= <<<IMAGE
+            <image>
+                <url>{$url}</url>
+                <title>image</title>
+                <link>{$this->simulator->linkToSource}</link>
+                <width>32</width>
+                <height>32</height>
+            </image>
+            IMAGE;
+        }
+
+        // Entries
         foreach ($this->simulator->entries as $entry) {
             $feed .= $this->entryToString($entry);
         }

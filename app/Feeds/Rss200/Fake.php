@@ -37,10 +37,25 @@ class Fake extends FakeFeed
             <copyright>{$this->simulator->rights}</copyright>
         FEED;
 
+        // Categories
         foreach ($this->simulator->categories as $category) {
             $feed .= "<category>{$category}</category>\n";
         }
 
+        // Image
+        if ($url = $this->simulator->imageUrl) {
+            $feed .= <<<IMAGE
+            <image>
+                <url>{$url}</url>
+                <title>image</title>
+                <link>{$this->simulator->linkToSource}</link>
+                <width>32</width>
+                <height>32</height>
+            </image>
+            IMAGE;
+        }
+
+        // Entries
         foreach ($this->simulator->entries as $entry) {
             $feed .= $this->entryToString($entry);
         }
@@ -79,12 +94,14 @@ class Fake extends FakeFeed
             <guid>{$identifier}</guid>
         ENTRY;
 
-        foreach ($categories as $category) {
-            $entry .= "<category>{$category}</category>";
-        }
-
+        // Authors
         foreach ($authors as $author) {
             $entry .= "<author>{$author->getEmail()}</author>\n";
+        }
+
+        // Categories
+        foreach ($categories as $category) {
+            $entry .= "<category>{$category}</category>";
         }
 
         return $entry .= '</item>';

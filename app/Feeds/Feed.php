@@ -80,10 +80,21 @@ abstract class Feed
     public function getExtra($key = null, $default = null): mixed
     {
         if ($key) {
-            return Arr::get($this->extra, $key, $default);
+            return data_get($this->extra, $key, $default);
         }
 
         return $this->extra;
+    }
+
+    /**
+     * Check to see if a key is available in the extras array.
+     *
+     * @param string $key
+     * @return boolean
+     */
+    public function hasExtra($key)
+    {
+        return Arr::has($this->extra, $key);
     }
 
     /**
@@ -95,7 +106,7 @@ abstract class Feed
      */
     public function setExtra($key, $value): void
     {
-        $this->extra[$key] = $value;
+        $this->extra = data_set($this->extra, $key, $value);
     }
 
     /**

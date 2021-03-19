@@ -37,12 +37,25 @@ class Fake extends FakeFeed
             <pubDate>{$this->simulator->timestamp->toRssString()}</pubDate>
         FEED;
 
+        // Image
+        if ($url = $this->simulator->imageUrl) {
+            $feed .= <<<IMAGE
+            <image>
+                <url>{$url}</url>
+                <title>image</title>
+                <link>{$this->simulator->linkToSource}</link>
+                <width>32</width>
+                <height>32</height>
+            </image>
+            IMAGE;
+        }
+
+        // Entries
         foreach ($this->simulator->entries as $entry) {
             $feed .= $this->entryToString($entry);
         }
 
         $feed .= <<<FEED
-
         </channel>
         </rss>
         FEED;

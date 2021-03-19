@@ -40,12 +40,17 @@ class Simulator
     /**
      * @var string
      */
-    public $linkToSource;
+    public $imageUrl;
 
     /**
      * @var string
      */
     public $linkToFeed;
+
+    /**
+     * @var string
+     */
+    public $linkToSource;
 
     /**
      * @var string
@@ -91,8 +96,9 @@ class Simulator
         $feed->authors = Arr::get($attributes, 'authors', []);
         $feed->categories = Arr::get($attributes, 'categories', []);
         $feed->identifier = Arr::get($attributes, 'identifier', $feed->faker->uuid());
-        $feed->linkToSource = Arr::get($attributes, 'linkToSource', $feed->faker->url);
+        $feed->imageUrl = Arr::get($attributes, 'imageUrl', 'https://picsum.photos/200/300');
         $feed->linkToFeed = Arr::get($attributes, 'linkToFeed', $feed->faker->url);
+        $feed->linkToSource = Arr::get($attributes, 'linkToSource', $feed->faker->url);
         $feed->rights = Arr::get($attributes, 'rights', 'Copyright Information');
         $feed->subtitle = Arr::get($attributes, 'subtitle', $feed->faker->sentence());
         $feed->title = Arr::get($attributes, 'title', $feed->faker->sentence());

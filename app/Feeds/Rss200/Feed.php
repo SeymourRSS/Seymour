@@ -29,11 +29,6 @@ class Feed extends ParentFeed
             $this->setExtra('categories', $categories->toArray());
         }
 
-        // Links
-        $this->linkToSource = Xml::links($this->xml->channel[0])
-            ->whereIn('rel', ['none', 'alternate'])
-            ->first();
-
         // Entries
         $this->entries = collect();
         $namespaces = $this->getXmlNamespaces();
@@ -42,6 +37,22 @@ class Feed extends ParentFeed
             $entry->initialize($item, $namespaces);
             $this->entries->push($entry);
         }
+
+        // Image
+        if (Xml::exists($this->xml->channel[0]->image)) {
+            $image = [];
+            $image['height'] = Xml::decode($this->xml->channel[0]->image->height);
+            $image['link'] = Xml::decode($this->xml->channel[0]->image->link);
+            $image['title'] = Xml::decode($this->xml->channel[0]->image->title);
+            $image['url'] = Xml::decode($this->xml->channel[0]->image->url);
+            $image['width'] = Xml::decode($this->xml->channel[0]->image->width);
+            $this->setExtra('image', array_filter($image));
+        }
+
+        // Links
+        $this->linkToSource = Xml::links($this->xml->channel[0])
+            ->whereIn('rel', ['none', 'alternate'])
+            ->first();
 
         // Timestamp
         $this->timestamp = Xml::timestamp($this->xml->channel[0]->pubDate);

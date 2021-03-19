@@ -45,11 +45,6 @@ class Feed extends ParentFeed
             $this->setExtra('categories', $categories->filter()->toArray());
         }
 
-        // Links
-        $links = Xml::links($this->xml);
-        $this->linkToSource = $links->whereIn('rel', ['none', 'alternate'])->first();
-        $this->linkToFeed = $links->where('rel', 'self')->first();
-
         // Entries
         $this->entries = collect();
         $namespaces = $this->getXmlNamespaces();
@@ -61,6 +56,16 @@ class Feed extends ParentFeed
 
         // Identifier
         $this->identifier = $this->generateIdentifier($this->xml->id);
+
+        // Image
+        if ($image = Xml::decode($this->xml->logo)) {
+            $this->setExtra('image.url', $image);
+        }
+
+        // Links
+        $links = Xml::links($this->xml);
+        $this->linkToSource = $links->whereIn('rel', ['none', 'alternate'])->first();
+        $this->linkToFeed = $links->where('rel', 'self')->first();
     }
 
     /**
