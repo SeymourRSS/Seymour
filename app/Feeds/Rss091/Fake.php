@@ -71,9 +71,10 @@ class Fake extends FakeFeed
      */
     protected function entryToString(array $entry): string
     {
-        $title = Arr::get($entry, 'title');
+        $categories = Arr::get($entry, 'categories', []);
         $linkToSource = Arr::get($entry, 'linkToSource');
         $summary = Arr::get($entry, 'summary');
+        $title = Arr::get($entry, 'title');
 
         $entry = <<<ENTRY
         <item>
@@ -83,6 +84,10 @@ class Fake extends FakeFeed
 
         if ($summary) {
             $entry .= "<description>{$summary}</description>";
+        }
+
+        foreach ($categories as $category) {
+            $entry .= "<category domain=\"http://example.com\">{$category}</category>";
         }
 
         $entry .= '</item>';

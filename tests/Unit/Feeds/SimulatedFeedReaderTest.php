@@ -112,6 +112,7 @@ class SimulatedFeedReaderTest extends TestCase
                 'timestamp' => $knownDate,
             ])
             ->withEntry([
+                'categories' => ['cat1', 'cat2'],
                 'linkToSource' => 'example.com/link',
                 'title' => 'Example Entry Title',
                 'summary' => 'Summary 1',
@@ -139,6 +140,7 @@ class SimulatedFeedReaderTest extends TestCase
         $entries = $feed->getEntries();
         $this->assertCount(2, $entries);
         $this->assertNotEmpty($entries[0]->getIdentifier());
+        $this->assertEquals(['Cat1', 'Cat2'], $entries[0]->getExtra('categories'));
         $this->assertEquals('example.com/link', $entries[0]->getLinkToSource());
         $this->assertEquals('Summary 1', $entries[0]->getSummary());
         $this->assertEquals('Example Entry Title', $entries[0]->getTitle());
